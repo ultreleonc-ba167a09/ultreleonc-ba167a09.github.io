@@ -1,0 +1,988 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>糖心免费版-短剧资源类型_通勤追剧场景_版本对比选择</title>
+<meta name="description" content="糖心免费版是一个围绕短剧资源与观看方式的导航型内容页，整理短剧类型、通勤追剧场景、更新节奏与版本对比选择依据，适合想找可看条目与筛选方向的用户阅读参考。">
+<meta name="keywords" content="短剧资源,通勤追剧,短剧类型,观看方式,版本对比">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23e2557b'/%3E%3Cpath d='M32 12c7 8 12 13 12 21a12 12 0 0 1-24 0c0-8 5-13 12-21z' fill='%23fff'/%3E%3Ccircle cx='32' cy='35' r='5' fill='%23e2557b'/%3E%3C/svg%3E">
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+<style>
+:root{
+  --rose:#e2557b;
+  --rose-deep:#b93a5e;
+  --rose-soft:#fbe4ea;
+  --ink:#241a20;
+  --ink-2:#4c3b44;
+  --ink-3:#7d6a74;
+  --line:#efdde4;
+  --paper:#fffafb;
+  --panel:#ffffff;
+  --cream:#fdf2f5;
+  --gold:#c98a2e;
+  --shadow:0 1px 2px rgba(80,30,50,.05),0 8px 24px rgba(120,50,80,.06);
+  --radius:14px;
+  --radius-s:9px;
+  --announce-h:38px;
+  --head-h:64px;
+  --stick:calc(var(--announce-h) + var(--head-h));
+  --font:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--stick) + 14px)}
+body{
+  margin:0;font-family:var(--font);color:var(--ink);
+  background:var(--paper);line-height:1.75;font-size:15px;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--rose-deep);text-decoration:none}
+a:hover{text-decoration:underline}
+img,svg{max-width:100%}
+h1,h2,h3,h4{margin:0;line-height:1.35;font-weight:700}
+p{margin:0 0 .85em}
+ul,ol{margin:0 0 .9em;padding-left:1.15em}
+li{margin:.24em 0}
+button{font-family:inherit}
+
+/* ---------- 吸顶公告条 + 页头 ---------- */
+.top-wrap{position:sticky;top:0;z-index:60}
+.announce{
+  height:var(--announce-h);display:flex;align-items:center;justify-content:center;
+  gap:10px;background:linear-gradient(90deg,#b93a5e,#e2557b 55%,#f0809f);
+  color:#fff;font-size:13px;letter-spacing:.02em;padding:0 14px;text-align:center;
+}
+.announce b{font-weight:700;background:rgba(255,255,255,.22);border-radius:20px;padding:1px 9px;font-size:12px}
+.announce span{opacity:.94;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.site-head{
+  height:var(--head-h);background:rgba(255,250,251,.96);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);display:flex;align-items:center;
+}
+.head-inner{
+  width:min(1380px,100% - 40px);margin:0 auto;display:flex;align-items:center;gap:22px;
+}
+.brand{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.brand-mark{width:36px;height:36px;flex-shrink:0}
+.brand-text{font-size:19px;font-weight:800;letter-spacing:.01em;color:var(--ink);white-space:nowrap}
+.brand-text em{font-style:normal;color:var(--rose-deep)}
+.head-nav{display:flex;align-items:center;gap:4px;flex-wrap:wrap;flex:1}
+.head-nav a{
+  font-size:14px;color:var(--ink-2);padding:6px 11px;border-radius:20px;white-space:nowrap;
+}
+.head-nav a:hover{background:var(--rose-soft);text-decoration:none;color:var(--rose-deep)}
+.head-search{position:relative;flex-shrink:0;width:210px}
+.head-search input{
+  width:100%;height:36px;border:1px solid var(--line);background:#fff;border-radius:20px;
+  padding:0 36px 0 14px;font-size:13.5px;color:var(--ink);outline:none;
+}
+.head-search input:focus{border-color:var(--rose);box-shadow:0 0 0 3px rgba(226,85,123,.13)}
+.head-search .ico{
+  position:absolute;right:11px;top:50%;transform:translateY(-50%);
+  width:16px;height:16px;pointer-events:none;opacity:.55;
+}
+.search-feedback{
+  position:absolute;top:42px;left:0;right:0;background:#fff;border:1px solid var(--line);
+  border-radius:10px;box-shadow:var(--shadow);padding:9px 12px;font-size:12.5px;color:var(--ink-3);
+  display:none;z-index:80;
+}
+.search-feedback.on{display:block}
+
+/* ---------- 首屏 ---------- */
+.hero{
+  background:
+    radial-gradient(900px 340px at 88% -10%,rgba(226,85,123,.14),transparent 62%),
+    linear-gradient(180deg,#fdf2f5,#fffafb);
+  border-bottom:1px solid var(--line);
+}
+.hero-inner{
+  width:min(1380px,100% - 40px);margin:0 auto;padding:38px 0 34px;
+  display:grid;grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr);gap:38px;align-items:center;
+}
+.hero-kicker{
+  display:inline-flex;align-items:center;gap:8px;font-size:12.5px;color:var(--rose-deep);
+  background:#fff;border:1px solid var(--line);border-radius:20px;padding:4px 13px;margin-bottom:14px;
+  letter-spacing:.03em;
+}
+.hero-kicker i{width:7px;height:7px;border-radius:50%;background:var(--rose);display:inline-block}
+.hero h1{font-size:clamp(28px,3.6vw,42px);letter-spacing:.01em;margin-bottom:14px}
+.hero h1 .accent{color:var(--rose-deep)}
+.hero-lead{font-size:15.5px;color:var(--ink-2);max-width:44em;margin-bottom:16px}
+.hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.hero-tags span{
+  font-size:12.5px;color:var(--ink-2);background:#fff;border:1px solid var(--line);
+  border-radius:20px;padding:3px 12px;
+}
+.hero-actions{display:flex;flex-wrap:wrap;gap:11px}
+.btn{
+  display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:600;
+  padding:10px 20px;border-radius:24px;border:1px solid transparent;cursor:pointer;
+}
+.btn-primary{background:var(--rose);color:#fff;box-shadow:0 6px 16px rgba(226,85,123,.28)}
+.btn-primary:hover{background:var(--rose-deep);text-decoration:none;color:#fff}
+.btn-ghost{background:#fff;color:var(--rose-deep);border-color:#f2c8d5}
+.btn-ghost:hover{background:var(--rose-soft);text-decoration:none}
+.hero-visual{position:relative}
+.hero-card{
+  background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);
+  padding:16px;position:relative;overflow:hidden;
+}
+.hero-card::before{
+  content:"";position:absolute;inset:-40% -30% auto auto;width:220px;height:220px;border-radius:50%;
+  background:radial-gradient(circle,rgba(226,85,123,.16),transparent 70%);
+}
+.hc-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;position:relative}
+.hc-head b{font-size:13px;color:var(--ink-2);letter-spacing:.04em}
+.hc-head span{font-size:11.5px;color:var(--rose-deep);background:var(--rose-soft);border-radius:12px;padding:1px 9px}
+.hc-row{display:flex;gap:10px;align-items:center;padding:8px 0;border-top:1px dashed var(--line);position:relative}
+.hc-row:first-of-type{border-top:0}
+.hc-num{
+  width:22px;height:22px;flex-shrink:0;border-radius:7px;background:var(--cream);color:var(--rose-deep);
+  font-size:11.5px;font-weight:700;display:flex;align-items:center;justify-content:center;
+}
+.hc-row:nth-of-type(1) .hc-num{background:var(--rose);color:#fff}
+.hc-meta{min-width:0}
+.hc-meta strong{display:block;font-size:13.5px;font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hc-meta small{font-size:11.5px;color:var(--ink-3)}
+.hc-bar{height:5px;border-radius:4px;background:var(--cream);margin-top:16px;overflow:hidden}
+.hc-bar i{display:block;height:100%;width:72%;border-radius:4px;background:linear-gradient(90deg,var(--rose),#f2a0b7)}
+
+/* ---------- 主体三栏 ---------- */
+.layout{
+  width:min(1380px,100% - 40px);margin:0 auto;padding:30px 0 46px;
+  display:grid;grid-template-columns:176px minmax(0,1fr) 244px;gap:26px;align-items:start;
+}
+.col-left{position:sticky;top:calc(var(--stick) + 16px);align-self:start}
+.col-right{position:sticky;top:calc(var(--stick) + 16px);align-self:start}
+
+/* 侧栏通用面板 */
+.side-panel{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:13px 13px 15px;box-shadow:var(--shadow);margin-bottom:16px;
+}
+.side-panel:last-child{margin-bottom:0}
+.sp-title{
+  font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--ink-3);
+  text-transform:uppercase;margin-bottom:9px;display:flex;align-items:center;gap:7px;
+}
+.sp-title::before{content:"";width:3px;height:12px;border-radius:2px;background:var(--rose)}
+.sp-nav{list-style:none;padding:0;margin:0}
+.sp-nav li{margin:0}
+.sp-nav a{
+  display:block;font-size:13.5px;color:var(--ink-2);padding:6px 9px;border-radius:8px;
+  border-left:2px solid transparent;
+}
+.sp-nav a:hover{background:var(--cream);text-decoration:none;color:var(--rose-deep);border-left-color:var(--rose)}
+.sp-nav a small{display:block;font-size:11px;color:var(--ink-3);line-height:1.4}
+.chip-list{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0;margin:0}
+.chip-list a{
+  display:inline-block;font-size:12px;color:var(--ink-2);background:var(--cream);
+  border:1px solid var(--line);border-radius:16px;padding:2px 10px;
+}
+.chip-list a:hover{background:var(--rose-soft);color:var(--rose-deep);text-decoration:none;border-color:#f2c8d5}
+
+/* 中栏 */
+.col-main{min-width:0}
+.section{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px 26px 26px;box-shadow:var(--shadow);margin-bottom:22px;
+}
+.section:last-child{margin-bottom:0}
+.sec-head{margin-bottom:15px}
+.sec-kicker{font-size:12px;letter-spacing:.12em;color:var(--rose-deep);font-weight:700;text-transform:uppercase;margin-bottom:5px}
+.section h2{font-size:21px;letter-spacing:.01em;color:var(--ink)}
+.section h2 .h2-sub{font-size:13px;color:var(--ink-3);font-weight:400;margin-left:8px;letter-spacing:0}
+.section h3{font-size:16px;color:var(--ink);margin:20px 0 8px;padding-left:11px;border-left:3px solid var(--rose);line-height:1.5}
+.section h3:first-of-type{margin-top:10px}
+.sec-lead{font-size:14px;color:var(--ink-3);margin-top:6px}
+.section p{color:var(--ink-2)}
+.section strong{color:var(--rose-deep)}
+
+/* 卡片网格 */
+.card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.card{
+  border:1px solid var(--line);border-radius:var(--radius-s);background:#fff;
+  padding:13px 14px 12px;display:flex;flex-direction:column;gap:7px;
+  transition:border-color .16s,box-shadow .16s,transform .16s;
+}
+.card:hover{border-color:#f2c8d5;box-shadow:0 6px 18px rgba(190,80,120,.09);transform:translateY(-1px)}
+.card-top{display:flex;align-items:baseline;justify-content:space-between;gap:8px}
+.card-title{font-size:14.5px;font-weight:700;color:var(--ink);line-height:1.45}
+.card-type{
+  flex-shrink:0;font-size:11px;font-weight:600;color:var(--rose-deep);
+  background:var(--rose-soft);border-radius:5px;padding:1px 7px;letter-spacing:.02em;
+}
+.card-desc{font-size:12.8px;color:var(--ink-3);line-height:1.65;margin:0}
+.card-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:auto;padding-top:3px}
+.card-tags span{font-size:11px;color:var(--ink-2);background:#fdf7f9;border:1px solid var(--line);border-radius:10px;padding:1px 7px}
+.card-foot{display:flex;justify-content:space-between;font-size:11.5px;color:var(--ink-3);border-top:1px dashed var(--line);padding-top:7px}
+.card-foot b{color:var(--rose-deep);font-weight:600}
+
+/* 最新更新紧凑列表 */
+.update-list{list-style:none;padding:0;margin:0;counter-reset:up}
+.update-list li{
+  display:grid;grid-template-columns:52px minmax(0,1fr);gap:12px;padding:10px 0;
+  border-bottom:1px dashed var(--line);
+}
+.update-list li:last-child{border-bottom:0;padding-bottom:0}
+.up-time{font-size:12px;color:var(--ink-3);font-variant-numeric:tabular-nums;padding-top:1px}
+.up-body strong{display:block;font-size:14px;color:var(--ink);font-weight:600}
+.up-body span{font-size:12.8px;color:var(--ink-3)}
+
+/* 分类入口 */
+.cat-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.cat-item{
+  display:block;border:1px solid var(--line);border-radius:var(--radius-s);
+  padding:12px 12px 11px;background:linear-gradient(180deg,#fff,#fdf7f9);
+  color:var(--ink);transition:border-color .16s,box-shadow .16s;
+}
+.cat-item:hover{border-color:#f2c8d5;box-shadow:0 5px 14px rgba(190,80,120,.08);text-decoration:none}
+.cat-item b{display:block;font-size:13.8px;margin-bottom:3px}
+.cat-item small{font-size:11.5px;color:var(--ink-3);line-height:1.5;display:block}
+
+/* 深度正文 */
+.deep p{font-size:14.6px;line-height:1.9;color:var(--ink-2);max-width:38em}
+.deep ul{max-width:38em}
+.deep ul li{font-size:14.4px;color:var(--ink-2)}
+.deep .note{
+  background:var(--cream);border-left:3px solid var(--rose);border-radius:0 10px 10px 0;
+  padding:12px 15px;font-size:13.6px;color:var(--ink-2);margin:14px 0;
+}
+.deep .note b{color:var(--rose-deep)}
+
+/* 体验指南步骤 */
+.steps{list-style:none;padding:0;margin:0;display:grid;gap:11px}
+.steps li{
+  display:grid;grid-template-columns:30px minmax(0,1fr);gap:12px;align-items:start;
+  border:1px solid var(--line);border-radius:var(--radius-s);padding:12px 14px;background:#fff;
+}
+.step-n{
+  width:26px;height:26px;border-radius:8px;background:var(--rose);color:#fff;font-size:12.5px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+}
+.steps b{display:block;font-size:14px;color:var(--ink);margin-bottom:2px}
+.steps span{font-size:13px;color:var(--ink-3)}
+
+/* FAQ */
+.faq{display:grid;gap:9px}
+.faq details{
+  border:1px solid var(--line);border-radius:var(--radius-s);background:#fff;overflow:hidden;
+}
+.faq details[open]{border-color:#f2c8d5;background:#fffdfe}
+.faq summary{
+  cursor:pointer;padding:11px 15px;font-size:14.2px;font-weight:600;color:var(--ink);
+  list-style:none;display:flex;justify-content:space-between;gap:12px;align-items:center;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:17px;color:var(--rose);font-weight:400;line-height:1;flex-shrink:0}
+.faq details[open] summary::after{content:"–"}
+.faq summary:focus-visible{outline:2px solid var(--rose);outline-offset:-2px}
+.faq .faq-body{padding:0 15px 13px;font-size:13.5px;color:var(--ink-2);line-height:1.8}
+
+/* 评论 */
+.cmt-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.cmt{
+  border:1px solid var(--line);border-radius:var(--radius-s);padding:11px 13px;background:#fff;
+}
+.cmt-head{display:flex;align-items:center;gap:8px;margin-bottom:5px}
+.avatar{
+  width:24px;height:24px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:700;color:#fff;background:var(--rose);letter-spacing:0;
+}
+.cmt-head b{font-size:12.8px;color:var(--ink)}
+.cmt-head time{font-size:11px;color:var(--ink-3);margin-left:auto}
+.cmt p{font-size:13px;color:var(--ink-2);margin:0;line-height:1.7}
+
+/* 资讯 */
+.news-list{list-style:none;padding:0;margin:0}
+.news-list li{border-bottom:1px dashed var(--line);padding:11px 0}
+.news-list li:first-child{padding-top:0}
+.news-list li:last-child{border-bottom:0;padding-bottom:0}
+.news-title{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:3px}
+.news-title b{font-size:14.2px;color:var(--ink)}
+.news-title time{font-size:11.5px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.news-list p{font-size:13px;color:var(--ink-3);margin:0;line-height:1.7}
+
+/* 相关推荐 */
+.rec-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.rec{
+  display:flex;align-items:center;gap:9px;border:1px solid var(--line);border-radius:var(--radius-s);
+  padding:9px 12px;background:#fff;font-size:13.5px;color:var(--ink);
+}
+.rec:hover{border-color:#f2c8d5;text-decoration:none;background:#fffdfe}
+.rec i{
+  width:6px;height:6px;border-radius:50%;background:var(--rose);flex-shrink:0;display:inline-block;
+}
+.rec small{color:var(--ink-3);font-size:11.5px;margin-left:auto;flex-shrink:0}
+
+/* 时间线 */
+.timeline{list-style:none;padding:0;margin:0;border-left:2px solid var(--line);margin-left:6px}
+.timeline li{position:relative;padding:0 0 15px 20px}
+.timeline li:last-child{padding-bottom:0}
+.timeline li::before{
+  content:"";position:absolute;left:-6px;top:6px;width:10px;height:10px;border-radius:50%;
+  background:#fff;border:2px solid var(--rose);
+}
+.timeline b{display:block;font-size:13.8px;color:var(--ink)}
+.timeline span{font-size:12.8px;color:var(--ink-3)}
+
+/* 引语 */
+.quote{
+  border-radius:var(--radius-s);background:linear-gradient(135deg,#fdf2f5,#fffafb);
+  border:1px solid var(--line);padding:16px 18px;position:relative;
+}
+.quote p{font-size:14px;color:var(--ink-2);margin:0 0 9px}
+.quote cite{font-size:12.5px;color:var(--ink-3);font-style:normal}
+
+/* 页尾 */
+.site-foot{background:#2b1d24;color:#e6d6dd;margin-top:10px}
+.foot-inner{width:min(1380px,100% - 40px);margin:0 auto;padding:34px 0 22px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:26px}
+.foot-brand{display:flex;align-items:center;gap:9px;margin-bottom:10px}
+.foot-brand .brand-text{color:#fff;font-size:17px}
+.foot-desc{font-size:12.8px;color:#b9a2ab;line-height:1.8;max-width:26em}
+.foot-col h4{font-size:12px;letter-spacing:.12em;color:#f0b9c9;text-transform:uppercase;margin-bottom:9px;font-weight:700}
+.foot-col ul{list-style:none;padding:0;margin:0}
+.foot-col li{margin:0 0 5px}
+.foot-col a{font-size:13px;color:#cdb4bd}
+.foot-col a:hover{color:#fff}
+.foot-bottom{
+  border-top:1px solid rgba(255,255,255,.11);margin-top:24px;padding-top:14px;
+  display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;font-size:12px;color:#9c848e;
+}
+.foot-note{font-size:11.5px;color:#8b737d;margin-top:8px}
+
+/* 平板 */
+@media (max-width:1080px){
+  .layout{grid-template-columns:minmax(0,1fr) 232px;gap:22px}
+  .col-left{position:static;grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .col-left .side-panel{margin-bottom:0}
+  .hero-inner{grid-template-columns:1fr;gap:24px}
+  .cat-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+/* 手机 */
+@media (max-width:760px){
+  :root{--head-h:auto;--announce-h:auto}
+  .announce{height:auto;padding:7px 12px;font-size:11.5px;line-height:1.5;gap:6px}
+  .announce span{white-space:normal}
+  .site-head{height:auto;padding:9px 0}
+  .head-inner{flex-wrap:wrap;gap:9px;width:calc(100% - 24px)}
+  .brand-text{font-size:16.5px}
+  .head-search{order:3;width:100%}
+  .head-nav{order:4;width:100%;overflow-x:auto;flex-wrap:nowrap;padding-bottom:3px;scrollbar-width:none}
+  .head-nav::-webkit-scrollbar{display:none}
+  .head-nav a{font-size:13px;padding:5px 10px;background:var(--cream);border:1px solid var(--line)}
+  .hero-inner{width:calc(100% - 24px);padding:24px 0 22px}
+  .hero h1{font-size:26px}
+  .hero-lead{font-size:14px}
+  .layout{width:calc(100% - 24px);grid-template-columns:minmax(0,1fr);padding:20px 0 32px;gap:18px}
+  .col-left{grid-template-columns:1fr;order:2}
+  .col-main{order:1}
+  .col-right{order:3;position:static}
+  .section{padding:18px 15px 20px;border-radius:12px}
+  .section h2{font-size:18px}
+  .section h2 .h2-sub{display:block;margin:3px 0 0;font-size:12px}
+  .card-grid,.cmt-grid,.rec-grid{grid-template-columns:minmax(0,1fr)}
+  .cat-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .deep p,.deep ul{max-width:none}
+  .update-list li{grid-template-columns:46px minmax(0,1fr);gap:9px}
+  .foot-grid{grid-template-columns:1fr;gap:18px}
+  .foot-inner{width:calc(100% - 24px);padding:26px 0 18px}
+  .search-feedback{top:40px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+
+<!-- 吸顶公告条 + 页头 -->
+<div class="top-wrap">
+  <div class="announce" role="note">
+    <b>上新</b>
+    <span>本周短剧专题更新：都市情感、悬疑推理、家庭日常三类片单同步整理，附更新节奏说明</span>
+  </div>
+  <header class="site-head">
+    <div class="head-inner">
+      <a class="brand" href="/#top" aria-label="糖心免费版 首页">
+        <svg class="brand-mark" viewBox="0 0 64 64" role="img" aria-hidden="true">
+          <rect width="64" height="64" rx="15" fill="#e2557b"/>
+          <path d="M32 11c7.4 8.6 12.6 14 12.6 22.4A12.6 12.6 0 0 1 19.4 33.4C19.4 25 24.6 19.6 32 11z" fill="#fff"/>
+          <circle cx="32" cy="35" r="5.4" fill="#e2557b"/>
+          <path d="M32 41.6v6.2" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>
+        </svg>
+        <span class="brand-text">糖心<em>免费版</em></span>
+      </a>
+      <nav class="head-nav" aria-label="频道导航">
+        <a href="/#intro">内容简介</a>
+        <a href="/#hot">热门片单</a>
+        <a href="/#latest">更新动态</a>
+        <a href="/#category">类型分类</a>
+        <a href="/#deep">深度解析</a>
+        <a href="/#guide">观看指南</a>
+        <a href="/#faq">常见问答</a>
+        <a href="/#comments">观众评论</a>
+        <a href="/#news">相关资讯</a>
+        <a href="/#rec">相关推荐</a>
+      </nav>
+      <div class="head-search">
+        <input id="siteSearch" type="search" placeholder="搜索片单 / 类型 / 场景" aria-label="站内搜索片单、类型或场景" autocomplete="off">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="#7d6a74" stroke-width="2" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6" stroke-linecap="round"/>
+        </svg>
+        <div class="search-feedback" id="searchFeedback" role="status" aria-live="polite"></div>
+      </div>
+    </div>
+  </header>
+</div>
+
+<!-- 首屏 -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div>
+      <span class="hero-kicker"><i></i>短剧资源导航 · 类型与场景双向整理</span>
+      <h1>糖心免费版</h1>
+      <p class="hero-lead">围绕短剧内容的类型、观看场景与更新节奏做整理：哪些方向适合通勤追、哪些适合睡前放松、哪类片单完结更稳。页面把可看的条目、筛选方向与选择依据放在一起，方便按需求找内容，而不是在零散列表里反复试。</p>
+      <div class="hero-tags">
+        <span>都市情感短剧</span>
+        <span>悬疑推理片单</span>
+        <span>通勤追剧</span>
+        <span>完结状态</span>
+        <span>版本选择参考</span>
+      </div>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/#hot">查看热门片单</a>
+        <a class="btn btn-ghost" href="/#category">按类型筛选</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hc-head"><b>本周片单热度示意</b><span>示例</span></div>
+        <div class="hc-row">
+          <span class="hc-num">1</span>
+          <div class="hc-meta"><strong>夜班地铁口的告白</strong><small>都市情感 · 已完结 · 96 分钟</small></div>
+        </div>
+        <div class="hc-row">
+          <span class="hc-num">2</span>
+          <div class="hc-meta"><strong>第七封匿名信</strong><small>悬疑推理 · 更新至 18 集</small></div>
+        </div>
+        <div class="hc-row">
+          <span class="hc-num">3</span>
+          <div class="hc-meta"><strong>合租屋里的三餐四季</strong><small>生活日常 · 已完结 · 24 集</small></div>
+        </div>
+        <div class="hc-row">
+          <span class="hc-num">4</span>
+          <div class="hc-meta"><strong>旧城墙下的照相馆</strong><small>年代情感 · 更新至 12 集</small></div>
+        </div>
+        <div class="hc-bar"><i></i></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 三栏主内容区 -->
+<div class="layout">
+
+  <!-- 左栏 -->
+  <aside class="col-left" aria-label="频道与分类索引">
+    <div class="side-panel">
+      <div class="sp-title">频道导航</div>
+      <ul class="sp-nav">
+        <li><a href="/#intro">内容简介<small>页面覆盖哪些方向</small></a></li>
+        <li><a href="/#hot">热门片单<small>近期讨论度较高的条目</small></a></li>
+        <li><a href="/#latest">更新动态<small>今日与近三日更新</small></a></li>
+        <li><a href="/#category">类型分类<small>按题材快速定位</small></a></li>
+        <li><a href="/#deep">深度解析<small>类型差异与选择逻辑</small></a></li>
+        <li><a href="/#guide">观看指南<small>筛选、追更与收藏</small></a></li>
+        <li><a href="/#faq">常见问答<small>更新、完结、适合人群</small></a></li>
+        <li><a href="/#comments">观众评论<small>真实语气的中性反馈</small></a></li>
+        <li><a href="/#news">相关资讯<small>行业与内容动向</small></a></li>
+        <li><a href="/#rec">相关推荐<small>延伸片单与方向词</small></a></li>
+      </ul>
+    </div>
+    <div class="side-panel">
+      <div class="sp-title">类型索引</div>
+      <ul class="chip-list">
+        <li><a href="/#category">都市情感</a></li>
+        <li><a href="/#category">悬疑推理</a></li>
+        <li><a href="/#category">家庭日常</a></li>
+        <li><a href="/#category">年代怀旧</a></li>
+        <li><a href="/#category">轻喜剧</a></li>
+        <li><a href="/#category">校园青春</a></li>
+        <li><a href="/#category">职场成长</a></li>
+        <li><a href="/#category">奇幻脑洞</a></li>
+      </ul>
+    </div>
+    <div class="side-panel">
+      <div class="sp-title">场景筛选</div>
+      <ul class="chip-list">
+        <li><a href="/#guide">通勤追剧</a></li>
+        <li><a href="/#guide">睡前放松</a></li>
+        <li><a href="/#guide">周末连看</a></li>
+        <li><a href="/#guide">碎片时间</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <!-- 中栏 -->
+  <main class="col-main">
+
+    <!-- 1 内容简介 -->
+    <section class="section" id="intro">
+      <div class="sec-head">
+        <div class="sec-kicker">Content Overview</div>
+        <h2>内容简介<span class="h2-sub">短剧资源的方向、场景与选择依据</span></h2>
+      </div>
+      <p><strong>糖心免费版</strong>把短剧内容按“类型 + 场景 + 更新状态”三层整理，重点解决三个实际问题：想看某类题材时去哪里找、在通勤或睡前的碎片时间里适合看什么、面对多个同类片单时怎么判断哪一部更值得先看。短剧的特点是单集时长短、节奏快，但不同题材的叙事密度差别很大，选错类型往往比选错单部作品更影响体验。</p>
+      <p>页面中的片单按都市情感、悬疑推理、家庭日常、年代怀旧、轻喜剧、校园青春、职场成长、奇幻脑洞八个方向分区。每个方向都标注了常见单集时长、典型集数区间和完结状态，方便先看结构再看内容。对于通勤场景，优先推荐单集 8 分钟以内、剧情推进线清晰的作品；对于睡前场景，节奏平缓、情绪落点温和的生活流向内容更合适。</p>
+      <p>在比较层面，页面把“已完结”和“连载中”分开呈现，并给出更新频率的常见区间。追更型内容适合愿意等待、喜欢讨论的用户，完结型内容适合想一次看完、不愿被断点打断的用户。两类内容没有优劣，区别在于消费节奏。理解这一点，比单纯看热度数字更有参考价值。</p>
+      <p>此外，页面还整理了观看方式相关的说明，包括如何按类型筛选、如何判断一部短剧的节奏是否适合自己、以及在不同设备上阅读和查找条目的差异。所有内容围绕“找到合适的短剧方向”展开，不涉及与主题无关的功能描述。</p>
+    </section>
+
+    <!-- 2 热门内容推荐 -->
+    <section class="section" id="hot">
+      <div class="sec-head">
+        <div class="sec-kicker">Popular Picks</div>
+        <h2>热门片单推荐<span class="h2-sub">按类型与观看场景整理的近期条目</span></h2>
+        <p class="sec-lead">以下条目均为示例内容，热度与评分为页面内展示用示意值，用于说明卡片结构。</p>
+      </div>
+      <div class="card-grid">
+        <article class="card">
+          <div class="card-top"><span class="card-title">夜班地铁口的告白</span><span class="card-type">都市情感</span></div>
+          <p class="card-desc">以夜班通勤为背景的双线叙事，前六集围绕一次误会展开，情绪落点集中在人物选择而非强冲突。</p>
+          <div class="card-tags"><span>通勤追剧</span><span>已完结</span><span>单集 7 分钟</span></div>
+          <div class="card-foot"><span>热度 <b>9.2</b></span><span>24 集 · 完结</span></div>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="card-title">第七封匿名信</span><span class="card-type">悬疑推理</span></div>
+          <p class="card-desc">线索型悬疑结构，每两集回收一个伏笔，适合喜欢边看边推敲的观众，节奏偏紧。</p>
+          <div class="card-tags"><span>悬疑推理</span><span>连载中</span><span>单集 9 分钟</span></div>
+          <div class="card-foot"><span>热度 <b>8.9</b></span><span>更新至 18 集</span></div>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="card-title">合租屋里的三餐四季</span><span class="card-type">生活日常</span></div>
+          <p class="card-desc">以合租生活为线索的群像日常，冲突轻、生活细节多，适合睡前放松或碎片时间观看。</p>
+          <div class="card-tags"><span>睡前放松</span><span>已完结</span><span>治愈日常</span></div>
+          <div class="card-foot"><span>热度 <b>8.6</b></span><span>24 集 · 完结</span></div>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="card-title">旧城墙下的照相馆</span><span class="card-type">年代怀旧</span></div>
+          <p class="card-desc">年代背景下的家庭故事，画面与配乐是主要看点，叙事节奏偏慢，适合周末连看。</p>
+          <div class="card-tags"><span>年代怀旧</span><span>连载中</span><span>周末连看</span></div>
+          <div class="card-foot"><span>热度 <b>8.4</b></span><span>更新至 12 集</span></div>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="card-title">今天也没有加班</span><span class="card-type">轻喜剧</span></div>
+          <p class="card-desc">职场轻喜剧，单集独立小故事为主，适合碎片时间，任意一集开始都不影响理解。</p>
+          <div class="card-tags"><span>职场成长</span><span>碎片时间</span><span>单集 6 分钟</span></div>
+          <div class="card-foot"><span>热度 <b>8.7</b></span><span>30 集 · 完结</span></div>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="card-title">课桌第三排的夏天</span><span class="card-type">校园青春</span></div>
+          <p class="card-desc">校园群像题材，重点在人物关系变化，情绪表达克制，适合喜欢轻量青春叙事的观众。</p>
+          <div class="card-tags"><span>校园青春</span><span>已完结</span><span>轻量叙事</span></div>
+          <div class="card-foot"><span>热度 <b>8.3</b></span><span>20 集 · 完结</span></div>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="card-title">凌晨两点的便利店</span><span class="card-type">都市情感</span></div>
+          <p class="card-desc">以便利店夜班为舞台的单元故事，每集独立成篇，整体情绪偏温和，适合睡前放松。</p>
+          <div class="card-tags"><span>睡前放松</span><span>单元故事</span><span>单集 8 分钟</span></div>
+          <div class="card-foot"><span>热度 <b>8.5</b></span><span>16 集 · 完结</span></div>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="card-title">迷雾站的第十二个人</span><span class="card-type">悬疑推理</span></div>
+          <p class="card-desc">封闭空间推理结构，人物关系图是理解剧情的关键，建议连续观看，不适合跳集。</p>
+          <div class="card-tags"><span>悬疑推理</span><span>已完结</span><span>连续观看</span></div>
+          <div class="card-foot"><span>热度 <b>8.8</b></span><span>18 集 · 完结</span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 3 最新更新 -->
+    <section class="section" id="latest">
+      <div class="sec-head">
+        <div class="sec-kicker">Recent Updates</div>
+        <h2>最新更新动态<span class="h2-sub">近三日的条目变化与状态说明</span></h2>
+      </div>
+      <ul class="update-list">
+        <li><span class="up-time">今日</span><div class="up-body"><strong>第七封匿名信 更新至第 18 集</strong><span>本集回收了前半段的一处伏笔，悬疑线推进明显。</span></div></li>
+        <li><span class="up-time">今日</span><div class="up-body"><strong>旧城墙下的照相馆 更新至第 12 集</strong><span>家庭线进入转折段落，年代细节描写增多。</span></div></li>
+        <li><span class="up-time">今日</span><div class="up-body"><strong>迷雾站的第十二个人 标注完结</strong><span>全 18 集完结，适合一次连看。</span></div></li>
+        <li><span class="up-time">昨日</span><div class="up-body"><strong>夜班地铁口的告白 补充分集简介</strong><span>补齐了后六集的人物关系说明，便于回顾。</span></div></li>
+        <li><span class="up-time">昨日</span><div class="up-body"><strong>合租屋里的三餐四季 上线周末连看标签</strong><span>按单集时长与情绪节奏归入慢节奏片单。</span></div></li>
+        <li><span class="up-time">昨日</span><div class="up-body"><strong>今天也没有加班 新增碎片时间分区</strong><span>单元结构条目统一归入碎片时间入口。</span></div></li>
+        <li><span class="up-time">前日</span><div class="up-body"><strong>课桌第三排的夏天 更新人物关系图</strong><span>补充主要人物关系，便于理解群像叙事。</span></div></li>
+        <li><span class="up-time">前日</span><div class="up-body"><strong>凌晨两点的便利店 调整类型标签</strong><span>由单元故事细分为都市情感与睡前放松双标签。</span></div></li>
+        <li><span class="up-time">前日</span><div class="up-body"><strong>职场成长分类新增两部条目</strong><span>补充轻喜剧方向的职场题材，丰富分类入口。</span></div></li>
+        <li><span class="up-time">前日</span><div class="up-body"><strong>悬疑推理片单更新观看顺序建议</strong><span>对封闭空间类条目给出连续观看提示。</span></div></li>
+      </ul>
+    </section>
+
+    <!-- 4 分类入口 -->
+    <section class="section" id="category">
+      <div class="sec-head">
+        <div class="sec-kicker">Categories</div>
+        <h2>类型分类入口<span class="h2-sub">按题材方向定位片单</span></h2>
+        <p class="sec-lead">八个方向覆盖常见短剧题材，分类名称即用户常用的搜索词，点击可定位到对应说明。</p>
+      </div>
+      <div class="cat-grid">
+        <a class="cat-item" href="/#hot"><b>都市情感</b><small>通勤、夜班、城市关系</small></a>
+        <a class="cat-item" href="/#hot"><b>悬疑推理</b><small>线索型、封闭空间、反转</small></a>
+        <a class="cat-item" href="/#hot"><b>家庭日常</b><small>合租、亲情、生活流</small></a>
+        <a class="cat-item" href="/#hot"><b>年代怀旧</b><small>旧城、照相馆、家庭变迁</small></a>
+        <a class="cat-item" href="/#hot"><b>轻喜剧</b><small>单元故事、职场、解压</small></a>
+        <a class="cat-item" href="/#hot"><b>校园青春</b><small>群像、成长、轻叙事</small></a>
+        <a class="cat-item" href="/#hot"><b>职场成长</b><small>加班、晋升、同事关系</small></a>
+        <a class="cat-item" href="/#hot"><b>奇幻脑洞</b><small>设定向、短篇、想象力</small></a>
+      </div>
+    </section>
+
+    <!-- 5 深度解析 -->
+    <section class="section deep" id="deep">
+      <div class="sec-head">
+        <div class="sec-kicker">In-depth</div>
+        <h2>深度解析：短剧类型差异与选择逻辑<span class="h2-sub">从节奏、结构到观看场景</span></h2>
+      </div>
+      <p>短剧与长剧最大的差别不在时长，而在叙事密度。长剧可以用大量场景铺陈人物关系，短剧必须在有限时间里完成人物建立、冲突推进和情绪落点。理解这一点，就能解释为什么同样是都市情感题材，有的作品适合通勤时看，有的必须连续观看才能理解。</p>
+
+      <h3>一、类型差异的实质是节奏差异</h3>
+      <p>都市情感类短剧通常依赖人物关系推进，冲突集中在对话和选择上，单集的信息量相对可控，跳看一两集的影响不大。悬疑推理类则相反，线索分布密集，前后集之间存在强依赖，一旦跳集，人物动机和关键证据就容易断链。</p>
+      <p>生活日常与轻喜剧更接近单元结构，每集独立成篇，适合碎片时间。年代怀旧类往往把重点放在氛围与细节上，节奏偏慢，需要相对完整的时间段才能进入状态。校园青春介于群像与成长之间，理解人物关系图之后观感会明显提升。</p>
+      <p>因此，选择内容时先判断自己的时间形态，再判断题材，比先看热度更有效。通勤场景适合单集短、依赖弱的内容；周末连看适合强依赖、节奏慢但完整度高的内容。</p>
+
+      <h3>二、更新状态影响消费方式</h3>
+      <p>已完结内容适合一次看完，理解成本低，但缺少讨论空间。连载中内容适合边看边讨论，更新节奏会影响体验：日更适合追热点，周更适合慢慢消化。对于悬疑类，连载中观看容易遗忘线索，建议配合分集简介回顾。</p>
+      <ul>
+        <li><strong>日更：</strong>适合轻喜剧、单元故事，单集独立性强。</li>
+        <li><strong>周更：</strong>适合年代怀旧、家庭日常，节奏平缓。</li>
+        <li><strong>已完结：</strong>适合悬疑推理、强依赖剧情，一次连看更连贯。</li>
+        <li><strong>不定时更新：</strong>适合不追求进度的观众，建议先看前几集判断风格。</li>
+      </ul>
+
+      <h3>三、版本与入口的比较维度</h3>
+      <p>面对多个同类入口时，比较维度主要有三个：内容覆盖范围、更新同步速度、以及是否提供分集简介。覆盖范围决定能不能找到想看的类型，同步速度影响追更体验，分集简介则决定回顾成本。三者之中，分集简介常被忽略，但对连载中的悬疑类内容影响最大。</p>
+      <div class="note"><b>选择建议：</b>先按类型确定方向，再按更新状态确定消费方式，最后按单集时长匹配自己的时间。三步顺序不要颠倒，否则容易在同类内容里反复比较却难以决定。</div>
+
+      <h3>四、场景与内容的匹配</h3>
+      <p>通勤场景的特点是时间固定、注意力有限，适合单集 8 分钟以内、剧情推进线清晰的内容。睡前场景需要情绪落点温和，生活流和单元故事更合适。周末连看适合强依赖剧情，悬疑推理和年代怀旧更能体现完整叙事的优势。</p>
+      <p>把这些场景与类型对应起来，<strong>糖心免费版</strong>的片单结构就有了实际用途：不是简单罗列条目，而是让用户先定位自己的时间形态，再在对应分区里挑选。对多数用户来说，这一步能显著减少试错成本。</p>
+      <p>最后需要说明的是，短剧的题材边界并不严格，同一部作品可能同时属于都市情感与轻喜剧。分类的作用是提供入口，而不是给内容贴死标签。观看时以实际前两集的观感为准，比只看分类名称更可靠。</p>
+    </section>
+
+    <!-- 6 体验指南 -->
+    <section class="section" id="guide">
+      <div class="sec-head">
+        <div class="sec-kicker">Viewing Guide</div>
+        <h2>观看与筛选指南<span class="h2-sub">从入口到追更的四个步骤</span></h2>
+      </div>
+      <ol class="steps">
+        <li><span class="step-n">1</span><div><b>先按场景缩小范围</b><span>通勤、睡前、周末连看、碎片时间四种场景对应不同的单集时长与依赖强度，先选场景比先选题材更省时间。</span></div></li>
+        <li><span class="step-n">2</span><div><b>再按类型定位分区</b><span>都市情感、悬疑推理、家庭日常等八个方向各有说明，分类名称本身即常用搜索词，便于快速匹配。</span></div></li>
+        <li><span class="step-n">3</span><div><b>查看更新状态与集数</b><span>已完结适合连看，连载中适合追更；悬疑类连载中建议配合分集简介回顾线索。</span></div></li>
+        <li><span class="step-n">4</span><div><b>用站内搜索做最后确认</b><span>输入片名、类型或场景词可定位页面内条目，无匹配时会给出提示，避免反复翻找。</span></div></li>
+      </ol>
+      <p style="margin-top:14px;font-size:13.6px;color:var(--ink-3)">移动端的频道导航改为横向滚动，左右侧栏内容排在主内容之后，阅读顺序与桌面端一致。收藏与追更以页面内条目为单位，不涉及账号体系。</p>
+    </section>
+
+    <!-- 7 FAQ -->
+    <section class="section" id="faq">
+      <div class="sec-head">
+        <div class="sec-kicker">FAQ</div>
+        <h2>常见问答<span class="h2-sub">围绕类型、更新与选择</span></h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>糖心免费版里的短剧类型适合什么人看？</summary>
+          <div class="faq-body">都市情感适合喜欢人物关系与对话推进的观众；悬疑推理适合愿意连续观看、喜欢推敲线索的观众；家庭日常与轻喜剧适合碎片时间；年代怀旧适合周末连看。可以先按自己的时间形态选场景，再定类型。</div>
+        </details>
+        <details>
+          <summary>连载中的短剧一般多久更新一次？</summary>
+          <div class="faq-body">常见节奏有日更、周更和不定时更新三种。日更多见于单元结构或轻喜剧，周更多见于年代怀旧与家庭日常，不定时更新适合不追求进度的观众。具体以条目页标注为准，页面内的更新动态会记录变化。</div>
+        </details>
+        <details>
+          <summary>悬疑推理类短剧可以跳集看吗？</summary>
+          <div class="faq-body">不建议。悬疑类的线索分布密集，前后集之间存在强依赖，跳集容易导致人物动机和关键证据断链。如果时间有限，建议先看前两集判断风格，再决定是否连续观看。</div>
+        </details>
+        <details>
+          <summary>通勤时间只有十几分钟，适合看哪类短剧？</summary>
+          <div class="faq-body">优先选择单集 8 分钟以内、剧情推进线清晰的内容，例如都市情感和单元结构的轻喜剧。避免选择强依赖剧情、需要连续观看的悬疑类，否则通勤时间容易被切割，体验下降。</div>
+        </details>
+        <details>
+          <summary>已完结和连载中的短剧怎么选？</summary>
+          <div class="faq-body">想一次看完、不愿被断点打断，选已完结；愿意等待、喜欢边看边讨论，选连载中。两类没有优劣，区别在消费节奏。悬疑类如果选择连载中，建议配合分集简介回顾。</div>
+        </details>
+        <details>
+          <summary>页面里的热度分数是怎么用的？</summary>
+          <div class="faq-body">热度与评分是页面内的示意值，用于说明卡片结构，不代表真实平台数据。实际选择时建议以类型、更新状态和单集时长为主要依据，热度只作为辅助参考。</div>
+        </details>
+      </div>
+    </section>
+
+    <!-- 8 用户评论 -->
+    <section class="section" id="comments">
+      <div class="sec-head">
+        <div class="sec-kicker">Comments</div>
+        <h2>观众评论<span class="h2-sub">不同场景下的观看反馈</span></h2>
+      </div>
+      <div class="cmt-grid">
+        <div class="cmt"><div class="cmt-head"><span class="avatar">林</span><b>林间小满</b><time>3 小时前</time></div><p>通勤看《夜班地铁口的告白》刚好，单集短，不用记太多线索。</p></div>
+        <div class="cmt"><div class="cmt-head"><span class="avatar">周</span><b>周末不加班</b><time>5 小时前</time></div><p>悬疑那部跳了一集，后面完全接不上，还是得老实连看。</p></div>
+        <div class="cmt"><div class="cmt-head"><span class="avatar">阿</span><b>阿柚的猫</b><time>8 小时前</time></div><p>睡前看合租屋那部挺合适，节奏慢，不会越看越精神。</p></div>
+        <div class="cmt"><div class="cmt-head"><span class="avatar">陈</span><b>陈年旧胶片</b><time>昨天</time></div><p>年代那部的画面不错，就是更新有点慢，等得着急。</p></div>
+        <div class="cmt"><div class="cmt-head"><span class="avatar">苏</span><b>苏打气泡</b><time>昨天</time></div><p>分类入口挺清楚，按场景找比按类型找快很多。</p></div>
+        <div class="cmt"><div class="cmt-head"><span class="avatar">何</span><b>何处是归途</b><time>昨天</time></div><p>轻喜剧适合碎片时间，随便点一集都能看懂，这点很好。</p></div>
+        <div class="cmt"><div class="cmt-head"><span class="avatar">小</span><b>小满未满</b><time>前天</time></div><p>站内搜索搜类型词能找到条目，比翻列表方便。</p></div>
+        <div class="cmt"><div class="cmt-head"><span class="avatar">顾</span><b>顾言不語</b><time>前天</time></div><p>热度分数看看就好，我还是更看重完结状态和单集时长。</p></div>
+        <div class="cmt"><div class="cmt-head"><span class="avatar">江</span><b>江南雨落</b><time>前天</time></div><p>校园那部人物有点多，看了关系图才理顺，建议先看简介。</p></div>
+        <div class="cmt"><div class="cmt-head"><span class="avatar">白</span><b>白桃乌龙</b><time>3 天前</time></div><p>悬疑连载中追起来有点累，准备等完结再一次性看。</p></div>
+        <div class="cmt"><div class="cmt-head"><span class="avatar">沈</span><b>沈舟渡</b><time>3 天前</time></div><p>页面结构清楚，左栏分类点一下就到位，不用来回找。</p></div>
+        <div class="cmt"><div class="cmt-head"><span class="avatar">许</span><b>许多多</b><time>3 天前</time></div><p>看到更新动态里写了完结标注，这个细节挺实用。</p></div>
+        <div class="cmt"><div class="cmt-head"><span class="avatar">夏</span><b>夏夜微凉</b><time>4 天前</time></div><p>都市情感那几部风格差别挺大，建议先看前两集再决定。</p></div>
+        <div class="cmt"><div class="cmt-head"><span class="avatar">韩</span><b>韩小楼</b><time>4 天前</time></div><p>整体还行，就是希望完结的条目能再多一些。</p></div>
+      </div>
+    </section>
+
+    <!-- 9 相关资讯 -->
+    <section class="section" id="news">
+      <div class="sec-head">
+        <div class="sec-kicker">Related News</div>
+        <h2>相关资讯<span class="h2-sub">短剧内容与观看方式动向</span></h2>
+      </div>
+      <ul class="news-list">
+        <li>
+          <div class="news-title"><b>短剧单集时长持续压缩，通勤场景成主要消费时段</b><time>2026-02-18</time></div>
+          <p>多部新上线短剧把单集控制在 8 分钟以内，剧情推进线更集中，适配碎片时间的观看习惯。</p>
+        </li>
+        <li>
+          <div class="news-title"><b>悬疑推理类短剧增多，连续观看比例上升</b><time>2026-02-15</time></div>
+          <p>线索型叙事对连续观看要求较高，分集简介与人物关系图成为辅助理解的重要部分。</p>
+        </li>
+        <li>
+          <div class="news-title"><b>单元结构轻喜剧受碎片时间用户欢迎</b><time>2026-02-11</time></div>
+          <p>单集独立成篇的轻喜剧题材，任意一集切入都能理解，适合通勤与午休等短时段。</p>
+        </li>
+        <li>
+          <div class="news-title"><b>年代怀旧题材在周末连看场景中表现稳定</b><time>2026-02-07</time></div>
+          <p>画面与配乐是主要看点，节奏偏慢但完整度高，适合相对完整的观看时间。</p>
+        </li>
+        <li>
+          <div class="news-title"><b>分类入口与场景筛选成为短剧导航常见结构</b><time>2026-02-03</time></div>
+          <p>按场景缩小范围、再按类型定位的方式，能减少同类内容之间的反复比较。</p>
+        </li>
+        <li>
+          <div class="news-title"><b>完结状态标注被更多观众作为选择依据</b><time>2026-01-29</time></div>
+          <p>不愿被断点打断的观众倾向选择已完结内容，追更用户则更关注更新节奏是否稳定。</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 10 相关推荐 -->
+    <section class="section" id="rec">
+      <div class="sec-head">
+        <div class="sec-kicker">More to Explore</div>
+        <h2>相关推荐<span class="h2-sub">按方向词延伸的片单入口</span></h2>
+      </div>
+      <div class="rec-grid">
+        <a class="rec" href="/#hot"><i></i>都市情感短剧片单<small>通勤</small></a>
+        <a class="rec" href="/#hot"><i></i>悬疑推理连续观看推荐<small>连看</small></a>
+        <a class="rec" href="/#hot"><i></i>睡前放松生活流条目<small>睡前</small></a>
+        <a class="rec" href="/#hot"><i></i>周末连看年代怀旧片单<small>周末</small></a>
+        <a class="rec" href="/#hot"><i></i>碎片时间轻喜剧单元故事<small>碎片</small></a>
+        <a class="rec" href="/#hot"><i></i>校园青春群像叙事方向<small>群像</small></a>
+        <a class="rec" href="/#hot"><i></i>职场成长题材选择参考<small>职场</small></a>
+        <a class="rec" href="/#hot"><i></i>完结短剧一次看完清单<small>完结</small></a>
+      </div>
+    </section>
+
+    <!-- 11 时间线 -->
+    <section class="section" id="timeline">
+      <div class="sec-head">
+        <div class="sec-kicker">Timeline</div>
+        <h2>近期片单变化时间线<span class="h2-sub">条目状态与分类调整记录</span></h2>
+      </div>
+      <ul class="timeline">
+        <li><b>2 月中旬 · 悬疑片单扩充</b><span>新增封闭空间推理条目，补充连续观看提示与分集简介。</span></li>
+        <li><b>2 月上旬 · 场景筛选上线</b><span>通勤、睡前、周末连看、碎片时间四类场景入口与类型分区对应。</span></li>
+        <li><b>1 月下旬 · 完结状态标注统一</b><span>已完结与连载中分开呈现，更新频率给出常见区间说明。</span></li>
+        <li><b>1 月中旬 · 分类名称调整</b><span>分类改用常用题材词，便于按搜索习惯定位。</span></li>
+      </ul>
+    </section>
+
+    <!-- 12 引语 -->
+    <section class="section" id="voice">
+      <div class="sec-head">
+        <div class="sec-kicker">Voices</div>
+        <h2>观众与内容观察者说<span class="h2-sub">关于选择与观看节奏</span></h2>
+      </div>
+      <div class="quote">
+        <p>“短剧选片最怕的不是不好看，是节奏和自己的时间不匹配。先定场景，再定类型，试错成本会低很多。”</p>
+        <cite>—— 内容观察者，长期关注短剧叙事结构</cite>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 右栏 -->
+  <aside class="col-right" aria-label="辅助阅读">
+    <div class="side-panel">
+      <div class="sp-title">页内目录</div>
+      <ul class="sp-nav">
+        <li><a href="/#intro">内容简介</a></li>
+        <li><a href="/#hot">热门片单推荐</a></li>
+        <li><a href="/#latest">最新更新动态</a></li>
+        <li><a href="/#category">类型分类入口</a></li>
+        <li><a href="/#deep">深度解析</a></li>
+        <li><a href="/#guide">观看与筛选指南</a></li>
+        <li><a href="/#faq">常见问答</a></li>
+        <li><a href="/#comments">观众评论</a></li>
+        <li><a href="/#news">相关资讯</a></li>
+        <li><a href="/#rec">相关推荐</a></li>
+        <li><a href="/#timeline">变化时间线</a></li>
+      </ul>
+    </div>
+    <div class="side-panel">
+      <div class="sp-title">热门条目</div>
+      <ul class="sp-nav">
+        <li><a href="/#hot">夜班地铁口的告白<small>都市情感 · 已完结</small></a></li>
+        <li><a href="/#hot">第七封匿名信<small>悬疑推理 · 更新至 18 集</small></a></li>
+        <li><a href="/#hot">合租屋里的三餐四季<small>生活日常 · 已完结</small></a></li>
+        <li><a href="/#hot">迷雾站的第十二个人<small>悬疑推理 · 已完结</small></a></li>
+        <li><a href="/#hot">今天也没有加班<small>轻喜剧 · 已完结</small></a></li>
+      </ul>
+    </div>
+    <div class="side-panel">
+      <div class="sp-title">延伸阅读</div>
+      <ul class="sp-nav">
+        <li><a href="/#deep">悬疑类连续观看建议</a></li>
+        <li><a href="/#deep">单集时长与场景匹配</a></li>
+        <li><a href="/#latest">完结与连载状态说明</a></li>
+        <li><a href="/#guide">按场景筛选的步骤</a></li>
+      </ul>
+    </div>
+    <div class="side-panel">
+      <div class="sp-title">方向词索引</div>
+      <ul class="chip-list">
+        <li><a href="/#hot">都市情感短剧</a></li>
+        <li><a href="/#hot">悬疑推理片单</a></li>
+        <li><a href="/#hot">通勤追剧</a></li>
+        <li><a href="/#hot">睡前放松</a></li>
+        <li><a href="/#hot">完结短剧</a></li>
+        <li><a href="/#hot">单元故事</a></li>
+      </ul>
+    </div>
+  </aside>
+
+</div>
+
+<!-- 页尾 -->
+<footer class="site-foot">
+  <div class="foot-inner">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <svg width="30" height="30" viewBox="0 0 64 64" role="img" aria-hidden="true">
+            <rect width="64" height="64" rx="15" fill="#e2557b"/>
+            <path d="M32 11c7.4 8.6 12.6 14 12.6 22.4A12.6 12.6 0 0 1 19.4 33.4C19.4 25 24.6 19.6 32 11z" fill="#fff"/>
+            <circle cx="32" cy="35" r="5.4" fill="#e2557b"/>
+          </svg>
+          <span class="brand-text">糖心<em>免费版</em></span>
+        </div>
+        <p class="foot-desc">围绕短剧类型、观看场景与更新状态整理的导航型内容页，帮助按需求定位片单方向。</p>
+      </div>
+      <div class="foot-col">
+        <h4>内容分区</h4>
+        <ul>
+          <li><a href="/#intro">内容简介</a></li>
+          <li><a href="/#hot">热门片单推荐</a></li>
+          <li><a href="/#latest">最新更新动态</a></li>
+          <li><a href="/#category">类型分类入口</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>阅读帮助</h4>
+        <ul>
+          <li><a href="/#deep">深度解析</a></li>
+          <li><a href="/#guide">观看与筛选指南</a></li>
+          <li><a href="/#faq">常见问答</a></li>
+          <li><a href="/#comments">观众评论</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>延伸入口</h4>
+        <ul>
+          <li><a href="/#news">相关资讯</a></li>
+          <li><a href="/#rec">相关推荐</a></li>
+          <li><a href="/#timeline">变化时间线</a></li>
+          <li><a href="/#voice">观众与观察者说</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 糖心免费版 · 内容导航示例页</span>
+      <span>类型 · 场景 · 更新状态</span>
+    </div>
+    <p class="foot-note">部分内容为示例数据，仅用于展示页面结构。</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var input = document.getElementById('siteSearch');
+  var fb = document.getElementById('searchFeedback');
+  if(!input || !fb) return;
+
+  var index = [];
+  document.querySelectorAll('.card-title, .cat-item b, .up-body strong, .rec, .faq summary, .sp-nav a, .news-title b').forEach(function(el){
+    var text = (el.textContent || '').trim();
+    if(text) index.push({el: el, text: text});
+  });
+
+  function clearMarks(){
+    document.querySelectorAll('mark[data-hl]').forEach(function(m){
+      var parent = m.parentNode;
+      parent.replaceChild(document.createTextNode(m.textContent), m);
+      parent.normalize();
+    });
+  }
+
+  function search(){
+    var q = input.value.trim().toLowerCase();
+    clearMarks();
+    if(!q){
+      fb.classList.remove('on');
+      fb.textContent = '';
+      return;
+    }
+    var hits = index.filter(function(item){
+      return item.text.toLowerCase().indexOf(q) > -1;
+    });
+    if(hits.length === 0){
+      fb.classList.add('on');
+      fb.textContent = '没有找到匹配的片单、类型或场景，换个关键词试试。';
+      return;
+    }
+    fb.classList.add('on');
+    fb.textContent = '找到 ' + hits.length + ' 处相关内容，已在页面中标记。';
+    hits.slice(0, 12).forEach(function(item){
+      var el = item.el;
+      if(el.tagName === 'A'){ el.style.outline = '2px solid #e2557b'; el.style.outlineOffset = '2px'; }
+      else { el.style.background = '#fbe4ea'; el.style.borderRadius = '4px'; }
+      clearTimeout(el._t);
+      el._t = setTimeout(function(){
+        el.style.outline = '';
+        el.style.outlineOffset = '';
+        el.style.background = '';
+        el.style.borderRadius = '';
+      }, 6000);
+    });
+  }
+
+  input.addEventListener('input', search);
+  input.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ input.value = ''; search(); input.blur(); }
+  });
+})();
+</script>
+</body>
+                                                                                   </html>
