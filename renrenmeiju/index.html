@@ -1,0 +1,1788 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人人美剧电脑版-美剧电脑版下载_美剧电脑版怎么用_美剧电脑版对比</title>
+    <meta name="description" content="人人美剧电脑版提供美剧电脑版下载与使用指南，涵盖美剧电脑版怎么用、对比不同版本，适合喜欢在电脑上追美剧的用户。">
+    <meta name="keywords" content="美剧电脑版下载,美剧电脑版使用,美剧电脑版对比,电脑看美剧,追美剧工具">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%231c2b4a'/%3E%3Cpath d='M35 30 L70 50 L35 70 Z' fill='%23f5c542'/%3E%3C/svg%3E">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        /* ---------- 全局变量与基础 ---------- */
+        :root {
+            --color-bg: #f8f9fc;
+            --color-surface: #ffffff;
+            --color-primary: #1c2b4a;
+            --color-primary-light: #2d3f66;
+            --color-accent: #f5c542;
+            --color-accent-soft: #fef6e0;
+            --color-text: #1e1e2a;
+            --color-text-secondary: #4a4e5a;
+            --color-border: #e2e5ed;
+            --color-muted: #8b8f9a;
+            --color-tag-bg: #edf0f7;
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 16px;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.06);
+            --font-base: 'PingFang SC', 'Microsoft YaHei', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            --max-width: 1360px;
+            --header-height: 64px;
+            --announce-height: 40px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: calc(var(--announce-height) + var(--header-height) + 16px);
+        }
+
+        body {
+            font-family: var(--font-base);
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        ul, ol {
+            list-style: none;
+        }
+
+        /* ---------- 吸顶公告条 ---------- */
+        .announce-bar {
+            position: sticky;
+            top: 0;
+            z-index: 102;
+            background: var(--color-primary);
+            color: #fff;
+            font-size: 13px;
+            letter-spacing: 0.3px;
+            height: var(--announce-height);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 16px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .announce-bar strong {
+            color: var(--color-accent);
+            font-weight: 600;
+        }
+
+        /* ---------- 吸顶页头 ---------- */
+        .site-header {
+            position: sticky;
+            top: var(--announce-height);
+            z-index: 101;
+            background: rgba(255,255,255,0.94);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--color-border);
+            height: var(--header-height);
+            display: flex;
+            align-items: center;
+            padding: 0 24px;
+        }
+
+        .header-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+
+        .brand svg {
+            width: 34px;
+            height: 34px;
+            display: block;
+        }
+
+        .brand-name {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--color-primary);
+            letter-spacing: -0.2px;
+            line-height: 1.2;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--color-text-secondary);
+        }
+
+        .header-nav a:hover {
+            color: var(--color-primary);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 20px;
+            padding: 4px 12px;
+            gap: 6px;
+        }
+
+        .search-box input {
+            border: none;
+            background: transparent;
+            font-size: 13px;
+            width: 140px;
+            outline: none;
+            font-family: inherit;
+            color: var(--color-text);
+        }
+
+        .search-box input::placeholder {
+            color: var(--color-muted);
+        }
+
+        .search-box button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
+            color: var(--color-muted);
+            padding: 2px;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-box button:hover {
+            color: var(--color-primary);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--color-primary);
+            background: transparent;
+            color: var(--color-primary);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            font-family: inherit;
+            transition: background 0.2s, color 0.2s;
+            white-space: nowrap;
+        }
+
+        .btn-outline:hover {
+            background: var(--color-primary);
+            color: #fff;
+        }
+
+        /* ---------- 首屏 ---------- */
+        .hero {
+            background: linear-gradient(135deg, #1c2b4a 0%, #14203b 100%);
+            color: #fff;
+            padding: 48px 24px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            right: -10%;
+            top: -30%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(245,197,66,0.12) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text {
+            max-width: 640px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(245,197,66,0.18);
+            color: var(--color-accent);
+            font-size: 13px;
+            font-weight: 600;
+            padding: 4px 14px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+            letter-spacing: 0.5px;
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 4.5vw, 48px);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-desc {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #c8d0e0;
+            margin-bottom: 28px;
+            max-width: 560px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .btn-primary {
+            background: var(--color-accent);
+            color: var(--color-primary);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: inherit;
+            transition: background 0.2s, transform 0.15s;
+        }
+
+        .btn-primary:hover {
+            background: #e6b83a;
+            transform: translateY(-1px);
+        }
+
+        .btn-ghost {
+            background: rgba(255,255,255,0.08);
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            font-family: inherit;
+            transition: background 0.2s;
+        }
+
+        .btn-ghost:hover {
+            background: rgba(255,255,255,0.16);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 36px;
+            margin-top: 32px;
+        }
+
+        .hero-stat-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hero-stat-num {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--color-accent);
+            line-height: 1.2;
+        }
+
+        .hero-stat-label {
+            font-size: 13px;
+            color: #9aa5bb;
+            margin-top: 2px;
+        }
+
+        .hero-visual {
+            flex-shrink: 0;
+            width: 260px;
+            height: 200px;
+            position: relative;
+            display: none;
+        }
+
+        @media (min-width: 1024px) {
+            .hero-visual {
+                display: block;
+            }
+        }
+
+        .hero-visual svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* ---------- 三栏主布局 ---------- */
+        .main-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 180px minmax(0, 1fr) 240px;
+            gap: 24px;
+            padding: 28px 24px 40px;
+            align-items: start;
+        }
+
+        /* 左栏 */
+        .left-sidebar {
+            position: sticky;
+            top: calc(var(--announce-height) + var(--header-height) + 20px);
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .sidebar-section {
+            background: var(--color-surface);
+            border-radius: var(--radius-md);
+            padding: 16px 14px;
+            border: 1px solid var(--color-border);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .sidebar-title {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--color-muted);
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .channel-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .channel-list a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 10px;
+            border-radius: var(--radius-sm);
+            font-size: 14px;
+            color: var(--color-text-secondary);
+            transition: background 0.15s, color 0.15s;
+            font-weight: 500;
+        }
+
+        .channel-list a:hover {
+            background: var(--color-tag-bg);
+            color: var(--color-primary);
+        }
+
+        .channel-list .active {
+            background: var(--color-tag-bg);
+            color: var(--color-primary);
+            font-weight: 600;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .filter-btn {
+            background: none;
+            border: 1px solid transparent;
+            text-align: left;
+            padding: 7px 10px;
+            border-radius: var(--radius-sm);
+            font-size: 13.5px;
+            color: var(--color-text-secondary);
+            cursor: pointer;
+            font-family: inherit;
+            transition: background 0.15s, border-color 0.15s;
+            font-weight: 500;
+        }
+
+        .filter-btn:hover {
+            background: var(--color-tag-bg);
+        }
+
+        .filter-btn.active {
+            background: var(--color-accent-soft);
+            border-color: var(--color-accent);
+            color: var(--color-primary);
+            font-weight: 600;
+        }
+
+        /* 中栏 */
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            min-width: 0;
+        }
+
+        .content-section {
+            background: var(--color-surface);
+            border-radius: var(--radius-lg);
+            padding: 24px 26px;
+            border: 1px solid var(--color-border);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--color-primary);
+            letter-spacing: -0.2px;
+        }
+
+        .section-subtitle {
+            font-size: 13px;
+            color: var(--color-muted);
+        }
+
+        /* 卡片网格 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 16px;
+        }
+
+        .content-card {
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            transition: box-shadow 0.2s, transform 0.15s;
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .content-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+
+        .card-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--color-primary);
+            line-height: 1.4;
+        }
+
+        .card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .tag {
+            background: var(--color-tag-bg);
+            color: var(--color-text-secondary);
+            font-size: 11px;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .card-desc {
+            font-size: 13px;
+            color: var(--color-text-secondary);
+            line-height: 1.55;
+            flex: 1;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--color-muted);
+            border-top: 1px solid var(--color-border);
+            padding-top: 8px;
+            margin-top: 4px;
+        }
+
+        .card-meta span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* 更新列表 */
+        .update-list {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .update-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--color-border);
+            gap: 12px;
+            font-size: 14px;
+        }
+
+        .update-item:last-child {
+            border-bottom: none;
+        }
+
+        .update-name {
+            font-weight: 600;
+            color: var(--color-primary);
+            flex-shrink: 0;
+            max-width: 45%;
+        }
+
+        .update-summary {
+            color: var(--color-text-secondary);
+            font-size: 13px;
+            text-align: right;
+            flex: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        /* 分类入口 */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+
+        .category-item {
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: 14px 12px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--color-primary);
+            transition: background 0.15s, border-color 0.15s;
+            cursor: pointer;
+        }
+
+        .category-item:hover {
+            background: var(--color-accent-soft);
+            border-color: var(--color-accent);
+        }
+
+        .category-count {
+            display: block;
+            font-size: 12px;
+            font-weight: 400;
+            color: var(--color-muted);
+            margin-top: 4px;
+        }
+
+        /* 深度解析 */
+        .deep-dive h3 {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin: 20px 0 8px;
+        }
+
+        .deep-dive h3:first-of-type {
+            margin-top: 4px;
+        }
+
+        .deep-dive p {
+            font-size: 14.5px;
+            line-height: 1.75;
+            color: var(--color-text-secondary);
+            margin-bottom: 12px;
+        }
+
+        .deep-dive ul {
+            margin: 8px 0 16px 20px;
+            list-style: disc;
+            color: var(--color-text-secondary);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .deep-dive ul li {
+            margin-bottom: 4px;
+        }
+
+        /* 体验指南 */
+        .guide-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .guide-step {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+        }
+
+        .step-num {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            background: var(--color-primary);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .step-text {
+            font-size: 14px;
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+            padding-top: 2px;
+        }
+
+        .step-text strong {
+            color: var(--color-primary);
+        }
+
+        /* FAQ */
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-item summary {
+            padding: 12px 0;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--color-primary);
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item summary::after {
+            content: '+';
+            font-size: 18px;
+            font-weight: 400;
+            color: var(--color-muted);
+            transition: transform 0.2s;
+            flex-shrink: 0;
+        }
+
+        .faq-item[open] summary::after {
+            content: '−';
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 0 14px;
+            font-size: 14px;
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+        }
+
+        /* 评论 */
+        .comment-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .comment-item {
+            background: var(--color-bg);
+            border-radius: var(--radius-sm);
+            padding: 12px 14px;
+            font-size: 13px;
+            line-height: 1.55;
+        }
+
+        .comment-user {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 6px;
+        }
+
+        .comment-avatar {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--color-primary-light);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .comment-name {
+            font-weight: 600;
+            color: var(--color-primary);
+            font-size: 12px;
+        }
+
+        .comment-text {
+            color: var(--color-text-secondary);
+        }
+
+        /* 相关资讯 */
+        .news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .news-item {
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .news-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .news-title-row {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 4px;
+        }
+
+        .news-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+
+        .news-date {
+            font-size: 12px;
+            color: var(--color-muted);
+            flex-shrink: 0;
+        }
+
+        .news-summary {
+            font-size: 13.5px;
+            color: var(--color-text-secondary);
+            line-height: 1.55;
+        }
+
+        /* 相关推荐标签 */
+        .recommend-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .recommend-tag {
+            background: var(--color-tag-bg);
+            color: var(--color-text-secondary);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+            transition: background 0.15s, color 0.15s;
+            cursor: default;
+        }
+
+        .recommend-tag:hover {
+            background: var(--color-accent-soft);
+            color: var(--color-primary);
+        }
+
+        /* 右栏 */
+        .right-sidebar {
+            position: sticky;
+            top: calc(var(--announce-height) + var(--header-height) + 20px);
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .toc-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .toc-list a {
+            display: block;
+            padding: 6px 10px;
+            font-size: 13px;
+            color: var(--color-text-secondary);
+            border-radius: var(--radius-sm);
+            transition: background 0.15s, color 0.15s;
+            line-height: 1.4;
+        }
+
+        .toc-list a:hover {
+            background: var(--color-tag-bg);
+            color: var(--color-primary);
+        }
+
+        .hot-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .hot-item {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            font-size: 13.5px;
+            color: var(--color-text-secondary);
+            line-height: 1.4;
+        }
+
+        .hot-rank {
+            flex-shrink: 0;
+            width: 18px;
+            height: 18px;
+            background: var(--color-bg);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--color-muted);
+            margin-top: 1px;
+        }
+
+        .hot-item:nth-child(1) .hot-rank {
+            background: var(--color-accent);
+            color: var(--color-primary);
+        }
+
+        .hot-item:nth-child(2) .hot-rank {
+            background: #e8e8e8;
+            color: #555;
+        }
+
+        .hot-item:nth-child(3) .hot-rank {
+            background: #f0e0d0;
+            color: #8a6e4b;
+        }
+
+        .hot-text {
+            font-weight: 500;
+        }
+
+        .extend-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .extend-list a {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13.5px;
+            color: var(--color-text-secondary);
+            padding: 6px 8px;
+            border-radius: var(--radius-sm);
+            transition: background 0.15s;
+        }
+
+        .extend-list a:hover {
+            background: var(--color-tag-bg);
+            color: var(--color-primary);
+        }
+
+        .extend-list a::before {
+            content: '›';
+            color: var(--color-muted);
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        /* 页尾 */
+        .site-footer {
+            background: var(--color-primary);
+            color: #b8c2d6;
+            padding: 40px 24px 28px;
+            margin-top: 20px;
+        }
+
+        .footer-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 32px;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-brand svg {
+            width: 30px;
+            height: 30px;
+        }
+
+        .footer-brand-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: -0.2px;
+        }
+
+        .footer-desc {
+            font-size: 13px;
+            line-height: 1.6;
+            color: #8895b0;
+            max-width: 260px;
+        }
+
+        .footer-col-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            font-size: 13px;
+        }
+
+        .footer-links a:hover {
+            color: var(--color-accent);
+        }
+
+        .footer-bottom {
+            max-width: var(--max-width);
+            margin: 32px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #6a7894;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        /* 搜索无结果提示 */
+        .no-results {
+            padding: 24px;
+            text-align: center;
+            color: var(--color-muted);
+            font-size: 14px;
+            display: none;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* 响应式 */
+        @media (max-width: 1024px) {
+            .main-container {
+                grid-template-columns: 170px minmax(0, 1fr);
+            }
+            .right-sidebar {
+                display: none;
+            }
+            .hero-visual {
+                display: none;
+            }
+            .footer-inner {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-container {
+                grid-template-columns: 1fr;
+                padding: 20px 16px 32px;
+                gap: 20px;
+            }
+            .left-sidebar {
+                position: static;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+            .sidebar-section {
+                flex: 1 1 auto;
+                min-width: 140px;
+            }
+            .header-nav {
+                display: none;
+            }
+            .search-box input {
+                width: 100px;
+            }
+            .hero {
+                padding: 32px 16px 28px;
+            }
+            .hero h1 {
+                font-size: 30px;
+            }
+            .hero-stats {
+                gap: 24px;
+                flex-wrap: wrap;
+            }
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .comment-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-inner {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            .announce-bar {
+                font-size: 11px;
+                padding: 0 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 26px;
+            }
+            .section-title {
+                font-size: 18px;
+            }
+            .content-section {
+                padding: 18px 16px;
+            }
+            .header-actions .btn-outline {
+                display: none;
+            }
+            .search-box input {
+                width: 80px;
+            }
+        }
+
+        /* 焦点可见 */
+        a:focus-visible,
+        button:focus-visible,
+        summary:focus-visible,
+        input:focus-visible {
+            outline: 2px solid var(--color-accent);
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 吸顶公告条 -->
+    <div class="announce-bar">
+        📺 人人美剧电脑版 · 全新版本上线，支持 <strong>1080P 高清追剧</strong> · 电脑端观看更流畅
+    </div>
+
+    <!-- 吸顶页头 -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/#hero" class="brand">
+                <svg viewBox="0 0 100 100" width="34" height="34" aria-hidden="true">
+                    <circle cx="50" cy="50" r="45" fill="#1c2b4a"/>
+                    <path d="M35 30 L70 50 L35 70 Z" fill="#f5c542"/>
+                </svg>
+                <span class="brand-name">人人美剧电脑版</span>
+            </a>
+            <nav class="header-nav" aria-label="主导航">
+                <a href="/#hot-recommend">热门推荐</a>
+                <a href="/#latest-update">最新更新</a>
+                <a href="/#category">分类筛选</a>
+                <a href="/#deep-dive">深度解析</a>
+                <a href="/#faq">常见问题</a>
+            </nav>
+            <div class="header-actions">
+                <div class="search-box">
+                    <input type="search" id="searchInput" placeholder="搜索美剧…" aria-label="搜索美剧内容">
+                    <button id="searchBtn" aria-label="搜索">🔍</button>
+                </div>
+                <button class="btn-outline" id="downloadBtn">电脑版下载</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 首屏 -->
+    <section class="hero" id="hero">
+        <div class="hero-inner">
+            <div class="hero-text">
+                <span class="hero-badge">🎬 电脑端专享 · 美剧追剧工具</span>
+                <h1>人人美剧电脑版</h1>
+                <p class="hero-desc">
+                    在电脑上流畅追美剧，支持高清画质与多字幕选择。聚合热门美剧、经典老剧与最新剧集，按类型、评分、更新进度快速筛选，找到你想看的下一部。
+                </p>
+                <div class="hero-actions">
+                    <button class="btn-primary" id="heroDownloadBtn">立即下载电脑版</button>
+                    <a href="/#latest-update" class="btn-ghost">查看今日更新</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat-item">
+                        <span class="hero-stat-num">2,800+</span>
+                        <span class="hero-stat-label">收录剧集</span>
+                    </div>
+                    <div class="hero-stat-item">
+                        <span class="hero-stat-num">12</span>
+                        <span class="hero-stat-label">美剧分类</span>
+                    </div>
+                    <div class="hero-stat-item">
+                        <span class="hero-stat-num">每日</span>
+                        <span class="hero-stat-label">持续更新</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual" aria-hidden="true">
+                <svg viewBox="0 0 260 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="20" y="20" width="220" height="140" rx="12" fill="#2d3f66" opacity="0.6"/>
+                    <rect x="30" y="30" width="200" height="120" rx="8" fill="#1c2b4a" stroke="#f5c542" stroke-width="2"/>
+                    <polygon points="120,70 160,90 120,110" fill="#f5c542"/>
+                    <rect x="50" y="150" width="160" height="8" rx="4" fill="#2d3f66"/>
+                    <rect x="90" y="162" width="80" height="6" rx="3" fill="#2d3f66" opacity="0.5"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- 三栏主内容区 -->
+    <div class="main-container">
+
+        <!-- 左栏：频道导航 + 分类筛选 -->
+        <aside class="left-sidebar" aria-label="频道导航与筛选">
+            <div class="sidebar-section">
+                <div class="sidebar-title">频道导航</div>
+                <nav class="channel-list" aria-label="频道">
+                    <a href="/#hot-recommend" class="active">🔥 热门推荐</a>
+                    <a href="/#latest-update">🆕 最新更新</a>
+                    <a href="/#category">📂 分类浏览</a>
+                    <a href="/#deep-dive">📖 深度解析</a>
+                    <a href="/#experience">🎮 体验指南</a>
+                    <a href="/#faq">❓ 常见问题</a>
+                    <a href="/#comments">💬 用户评论</a>
+                    <a href="/#news">📰 相关资讯</a>
+                    <a href="/#recommend-tags">🏷️ 相关推荐</a>
+                </nav>
+            </div>
+            <div class="sidebar-section">
+                <div class="sidebar-title">按类型筛选</div>
+                <div class="filter-group" id="filterGroup">
+                    <button class="filter-btn active" data-filter="all">全部美剧</button>
+                    <button class="filter-btn" data-filter="crime">犯罪悬疑</button>
+                    <button class="filter-btn" data-filter="sci-fi">科幻奇幻</button>
+                    <button class="filter-btn" data-filter="drama">剧情生活</button>
+                    <button class="filter-btn" data-filter="comedy">喜剧轻喜</button>
+                    <button class="filter-btn" data-filter="action">动作冒险</button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- 中栏：主内容 -->
+        <main class="main-content" id="main-content">
+
+            <!-- 1. 内容简介 -->
+            <section class="content-section" id="intro">
+                <div class="section-header">
+                    <h2 class="section-title">关于人人美剧电脑版</h2>
+                </div>
+                <div class="deep-dive">
+                    <p>
+                        <strong>人人美剧电脑版</strong>是面向美剧爱好者的电脑端观看与追剧工具，聚合了犯罪悬疑、科幻奇幻、剧情生活、喜剧轻喜、动作冒险等多种类型的美剧资源。对于习惯在电脑大屏上追剧的用户来说，电脑版提供了更稳定的播放体验与更便捷的剧集管理方式。无论是想找一部适合通勤途中缓存观看的短剧，还是想对比不同版本的播放器功能，这里都能提供清晰的参考。
+                    </p>
+                    <p>
+                        很多用户关心“美剧电脑版怎么用”“美剧电脑版和手机版有什么区别”。电脑版在界面布局上更充分利用横向空间，支持多窗口操作，方便边看剧边查资料。同时，电脑版对字幕加载、清晰度切换、播放进度记忆等细节做了针对性优化，适合长时间连续观看。如果你还在犹豫选择哪款工具，不妨先了解电脑版在追剧场景下的具体表现。
+                    </p>
+                    <p>
+                        本站围绕人人美剧电脑版的使用需求，整理了热门剧集推荐、最新更新动态、分类筛选入口以及详细的体验指南。从注册登录到缓存下载，从剧集收藏到更新提醒，每个环节都有对应的说明。对于追求画质与流畅度的美剧迷来说，电脑版是一个值得尝试的选择。
+                    </p>
+                </div>
+            </section>
+
+            <!-- 2. 热门内容推荐 -->
+            <section class="content-section" id="hot-recommend">
+                <div class="section-header">
+                    <h2 class="section-title">热门美剧推荐</h2>
+                    <span class="section-subtitle">按当前热度排序</span>
+                </div>
+                <div class="card-grid" id="cardGrid">
+                    <div class="content-card" data-category="crime">
+                        <div class="card-title">《罪恶黑名单》第八季</div>
+                        <div class="card-tags">
+                            <span class="tag">犯罪悬疑</span>
+                            <span class="tag">FBI</span>
+                            <span class="tag">高智商犯罪</span>
+                        </div>
+                        <p class="card-desc">红魔与FBI合作追捕黑名单罪犯，本季引入新对手，剧情反转密集，适合喜欢烧脑推理的观众。</p>
+                        <div class="card-meta">
+                            <span>🔥 热度 9.2</span>
+                            <span>⭐ 9.0</span>
+                            <span>已更新 18 集</span>
+                        </div>
+                    </div>
+                    <div class="content-card" data-category="sci-fi">
+                        <div class="card-title">《苍穹浩瀚》第六季</div>
+                        <div class="card-tags">
+                            <span class="tag">科幻</span>
+                            <span class="tag">太空歌剧</span>
+                            <span class="tag">硬核</span>
+                        </div>
+                        <p class="card-desc">太阳系各方势力最终对决，特效与物理设定严谨，是近年科幻美剧的口碑之作。</p>
+                        <div class="card-meta">
+                            <span>🔥 热度 8.8</span>
+                            <span>⭐ 9.3</span>
+                            <span>全 6 集</span>
+                        </div>
+                    </div>
+                    <div class="content-card" data-category="drama">
+                        <div class="card-title">《我们这一天》最终季</div>
+                        <div class="card-tags">
+                            <span class="tag">剧情生活</span>
+                            <span class="tag">家庭</span>
+                            <span class="tag">治愈</span>
+                        </div>
+                        <p class="card-desc">皮尔森一家故事的温暖收尾，时间线交织，适合睡前静静观看的情感剧。</p>
+                        <div class="card-meta">
+                            <span>🔥 热度 8.5</span>
+                            <span>⭐ 9.5</span>
+                            <span>全 18 集</span>
+                        </div>
+                    </div>
+                    <div class="content-card" data-category="comedy">
+                        <div class="card-title">《了不起的麦瑟尔夫人》第四季</div>
+                        <div class="card-tags">
+                            <span class="tag">喜剧</span>
+                            <span class="tag">女性成长</span>
+                            <span class="tag">复古</span>
+                        </div>
+                        <p class="card-desc">麦琪继续在脱口秀舞台闯荡，复古服装与快节奏对白是亮点，轻松下饭。</p>
+                        <div class="card-meta">
+                            <span>🔥 热度 8.2</span>
+                            <span>⭐ 8.8</span>
+                            <span>全 8 集</span>
+                        </div>
+                    </div>
+                    <div class="content-card" data-category="action">
+                        <div class="card-title">《海豹突击队》第五季</div>
+                        <div class="card-tags">
+                            <span class="tag">动作</span>
+                            <span class="tag">军事</span>
+                            <span class="tag">团队作战</span>
+                        </div>
+                        <p class="card-desc">聚焦特种部队任务与队员心理，战术细节真实，适合喜欢军事题材的观众。</p>
+                        <div class="card-meta">
+                            <span>🔥 热度 8.0</span>
+                            <span>⭐ 8.3</span>
+                            <span>已更新 14 集</span>
+                        </div>
+                    </div>
+                    <div class="content-card" data-category="crime">
+                        <div class="card-title">《真探》第四季</div>
+                        <div class="card-tags">
+                            <span class="tag">犯罪悬疑</span>
+                            <span class="tag">警探</span>
+                            <span class="tag">暗黑</span>
+                        </div>
+                        <p class="card-desc">极地环境下的连环案件调查，氛围冷峻，双警探搭档化学反应强烈。</p>
+                        <div class="card-meta">
+                            <span>🔥 热度 8.7</span>
+                            <span>⭐ 8.9</span>
+                            <span>全 6 集</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="no-results" id="noResults">没有找到匹配的美剧，请尝试其他筛选条件。</div>
+            </section>
+
+            <!-- 3. 最新更新 -->
+            <section class="content-section" id="latest-update">
+                <div class="section-header">
+                    <h2 class="section-title">最新更新动态</h2>
+                    <span class="section-subtitle">今日新增剧集</span>
+                </div>
+                <div class="update-list">
+                    <div class="update-item">
+                        <span class="update-name">《实习医生格蕾》第20季</span>
+                        <span class="update-summary">S20E05 更新 · 医疗团队面临新挑战</span>
+                    </div>
+                    <div class="update-item">
+                        <span class="update-name">《小谢尔顿》第7季</span>
+                        <span class="update-summary">S07E08 更新 · 谢尔顿的大学生活新篇章</span>
+                    </div>
+                    <div class="update-item">
+                        <span class="update-name">《芝加哥烈焰》第12季</span>
+                        <span class="update-summary">S12E10 更新 · 消防队救援行动升级</span>
+                    </div>
+                    <div class="update-item">
+                        <span class="update-name">《法律与秩序：SVU》第25季</span>
+                        <span class="update-summary">S25E06 更新 · 新案件引发社会讨论</span>
+                    </div>
+                    <div class="update-item">
+                        <span class="update-name">《海军罪案调查处》第21季</span>
+                        <span class="update-summary">S21E04 更新 · 团队调查海军基地事件</span>
+                    </div>
+                    <div class="update-item">
+                        <span class="update-name">《菜鸟老警》第6季</span>
+                        <span class="update-summary">S06E07 更新 · 诺兰处理社区纠纷案</span>
+                    </div>
+                    <div class="update-item">
+                        <span class="update-name">《驻院医生》第7季</span>
+                        <span class="update-summary">S07E09 更新 · 医院面临人员危机</span>
+                    </div>
+                    <div class="update-item">
+                        <span class="update-name">《罪恶黑名单》第八季</span>
+                        <span class="update-summary">S08E18 更新 · 红魔的名单出现新目标</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. 分类入口 -->
+            <section class="content-section" id="category">
+                <div class="section-header">
+                    <h2 class="section-title">按类型浏览美剧</h2>
+                    <span class="section-subtitle">8 个主要分类</span>
+                </div>
+                <div class="category-grid">
+                    <div class="category-item">犯罪悬疑<span class="category-count">386 部</span></div>
+                    <div class="category-item">科幻奇幻<span class="category-count">242 部</span></div>
+                    <div class="category-item">剧情生活<span class="category-count">520 部</span></div>
+                    <div class="category-item">喜剧轻喜<span class="category-count">198 部</span></div>
+                    <div class="category-item">动作冒险<span class="category-count">175 部</span></div>
+                    <div class="category-item">医疗职业<span class="category-count">96 部</span></div>
+                    <div class="category-item">法律律政<span class="category-count">88 部</span></div>
+                    <div class="category-item">历史传记<span class="category-count">64 部</span></div>
+                </div>
+            </section>
+
+            <!-- 5. 深度解析正文 -->
+            <section class="content-section" id="deep-dive">
+                <div class="section-header">
+                    <h2 class="section-title">深度解析：电脑版追剧体验与选择</h2>
+                </div>
+                <div class="deep-dive">
+                    <p>
+                        在电脑上追美剧，与手机端最大的不同在于屏幕空间和操作方式。人人美剧电脑版针对大屏做了界面适配，剧集列表、详情页和播放器可以同屏展示，减少来回切换。对于喜欢边看边查演员资料、或需要对照字幕学习的用户，电脑版的多任务处理能力明显更顺手。
+                    </p>
+                    <h3>播放器与字幕体验</h3>
+                    <p>
+                        电脑版播放器支持清晰度手动切换，从 480P 到 1080P 均可选择。字幕加载支持内嵌与外部导入，遇到生僻剧集时可以自行匹配字幕文件。播放进度自动保存，下次打开直接续播。这些细节对于连续追剧的体验提升明显。
+                    </p>
+                    <h3>剧集管理与更新提醒</h3>
+                    <p>
+                        在人人美剧电脑版中，你可以将正在追的剧加入收藏夹，系统会记录每部剧的已观看集数。当有新集更新时，收藏列表会标记“新”字提示。对于同时追多部美剧的用户，这个功能可以避免遗漏。此外，电脑版支持按更新时间、热度、评分对收藏列表排序。
+                    </p>
+                    <h3>电脑版与手机版的差异对比</h3>
+                    <ul>
+                        <li><strong>观看体验：</strong>电脑版屏幕更大，适合多人观看或追求沉浸感的用户；手机版则胜在便携，通勤路上随时可看。</li>
+                        <li><strong>操作效率：</strong>电脑版支持鼠标快捷操作与快捷键，搜索、筛选、切换剧集更快；手机版以触控为主。</li>
+                        <li><strong>缓存下载：</strong>两者均支持缓存，但电脑版管理下载文件更方便，可直接定位到本地文件夹。</li>
+                        <li><strong>多任务：</strong>电脑版可边看剧边浏览网页或聊天，适合需要同时处理其他事务的场景。</li>
+                    </ul>
+                    <p>
+                        如果你主要在固定场所观看，且对画质和操作效率有要求，人人美剧电脑版是更合适的选择。若你经常外出，可以电脑版与手机版配合使用，收藏与进度可同步。
+                    </p>
+                </div>
+            </section>
+
+            <!-- 6. 体验指南 -->
+            <section class="content-section" id="experience">
+                <div class="section-header">
+                    <h2 class="section-title">体验指南</h2>
+                    <span class="section-subtitle">快速上手电脑版</span>
+                </div>
+                <div class="guide-steps">
+                    <div class="guide-step">
+                        <div class="step-num">1</div>
+                        <div class="step-text"><strong>下载与安装：</strong>点击页面中的下载按钮获取电脑版安装包，按提示完成安装。安装后桌面会生成快捷方式。</div>
+                    </div>
+                    <div class="guide-step">
+                        <div class="step-num">2</div>
+                        <div class="step-text"><strong>浏览与筛选：</strong>左侧栏提供类型筛选，点击“犯罪悬疑”“科幻奇幻”等按钮可快速过滤剧集。顶部搜索框支持按剧名查找。</div>
+                    </div>
+                    <div class="guide-step">
+                        <div class="step-num">3</div>
+                        <div class="step-text"><strong>收藏与追更：</strong>进入剧集详情页，点击“收藏”即可加入追剧列表。收藏后可在个人中心查看更新提醒。</div>
+                    </div>
+                    <div class="guide-step">
+                        <div class="step-num">4</div>
+                        <div class="step-text"><strong>播放与设置：</strong>播放页可调节清晰度、字幕大小与颜色。支持全屏与窗口模式切换，适应不同观看习惯。</div>
+                    </div>
+                    <div class="guide-step">
+                        <div class="step-num">5</div>
+                        <div class="step-text"><strong>移动端配合：</strong>电脑版收藏与进度可同步至手机端，外出时继续观看未完成剧集。</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. FAQ -->
+            <section class="content-section" id="faq">
+                <div class="section-header">
+                    <h2 class="section-title">常见问题</h2>
+                </div>
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary>人人美剧电脑版适合在什么配置的电脑上使用？</summary>
+                        <div class="faq-answer">电脑版对硬件要求不高，主流配置即可流畅播放 1080P 视频。建议内存 4GB 以上，并保持网络稳定。若播放 4K 内容，需要更高的显卡与带宽支持。</div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>美剧电脑版和手机版在功能上有什么区别？</summary>
+                        <div class="faq-answer">电脑版优势在于大屏观看、多任务操作、更快的搜索与筛选效率，以及更方便的本地缓存管理。手机版则强调便携与碎片时间观看。两者收藏与进度可同步。</div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>电脑版支持哪些字幕格式？</summary>
+                        <div class="faq-answer">支持 SRT、ASS、SSA 等常见字幕格式。播放时可直接加载内嵌字幕，也可手动导入外部字幕文件。字幕大小、颜色、位置均可在设置中调整。</div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>人人美剧电脑版一般多久更新一次剧集？</summary>
+                        <div class="faq-answer">更新频率跟随美剧播出时间。热门剧集通常在播出后数小时内提供更新，具体以剧集页面的更新标记为准。收藏后可在“追剧”列表查看最新集数。</div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>电脑版可以下载缓存离线观看吗？</summary>
+                        <div class="faq-answer">可以。在剧集详情页选择“缓存”即可下载到本地。下载完成后可在“我的缓存”中查看与管理文件。缓存清晰度可选，建议根据存储空间选择。</div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>人人美剧电脑版和网页版相比哪个更好用？</summary>
+                        <div class="faq-answer">电脑版客户端在播放稳定性、缓存管理、快捷键操作上更有优势，适合长期追剧用户。网页版无需安装，适合临时观看。两者内容库一致，可根据使用习惯选择。</div>
+                    </details>
+                </div>
+            </section>
+
+            <!-- 8. 用户评论 -->
+            <section class="content-section" id="comments">
+                <div class="section-header">
+                    <h2 class="section-title">用户评论</h2>
+                    <span class="section-subtitle">来自美剧爱好者的声音</span>
+                </div>
+                <div class="comment-grid">
+                    <div class="comment-item"><div class="comment-user"><span class="comment-avatar">追</span><span class="comment-name">追剧小张</span></div><div class="comment-text">电脑版看美剧确实舒服，屏幕大，字幕也清楚。收藏功能很实用，不会忘记追到第几集。</div></div>
+                    <div class="comment-item"><div class="comment-user"><span class="comment-avatar">M</span><span class="comment-name">Mia_2024</span></div><div class="comment-text">科幻类的剧集挺全的，苍穹浩瀚一口气看完，播放很流畅。希望多加点老剧。</div></div>
+                    <div class="comment-item"><div class="comment-user"><span class="comment-avatar">老</span><span class="comment-name">老李看剧</span></div><div class="comment-text">用了一段时间，电脑版比手机版更适合我这种喜欢边看边查资料的人，不用来回切设备。</div></div>
+                    <div class="comment-item"><div class="comment-user"><span class="comment-avatar">阿</span><span class="comment-name">阿茶</span></div><div class="comment-text">更新速度还可以，热门剧基本第二天就能看到。缓存下载挺方便，出差前下好几集。</div></div>
+                    <div class="comment-item"><div class="comment-user"><span class="comment-avatar">J</span><span class="comment-name">Joyce_W</span></div><div class="comment-text">字幕导入功能好用，有些冷门剧没内嵌字幕，自己找字幕文件加载没问题。</div></div>
+                    <div class="comment-item"><div class="comment-user"><span class="comment-avatar">大</span><span class="comment-name">大胡子</span></div><div class="comment-text">界面挺干净的，没有乱七八糟的弹窗。分类筛选希望再加个按年份筛。</div></div>
+                    <div class="comment-item"><div class="comment-user"><span class="comment-avatar">小</span><span class="comment-name">小鹿乱撞</span></div><div class="comment-text">喜剧分类里的剧挺下饭的，麦瑟尔夫人画质不错，看着很舒服。</div></div>
+                    <div class="comment-item"><div class="comment-user"><span class="comment-avatar">K</span><span class="comment-name">Kevin_T</span></div><div class="comment-text">电脑版和手机版同步收藏，这点很满意。有时候电脑上看一半，出门用手机接着看。</div></div>
+                    <div class="comment-item"><div class="comment-user"><span class="comment-avatar">夜</span><span class="comment-name">夜猫子</span></div><div class="comment-text">希望增加一个“只看已完结”的筛选，追更太累了，想等完结再一口气看。</div></div>
+                    <div class="comment-item"><div class="comment-user"><span class="comment-avatar">林</span><span class="comment-name">林小夏</span></div><div class="comment-text">深度解析那块写得挺实在的，电脑版和手机版的区别讲清楚了，帮我做了选择。</div></div>
+                    <div class="comment-item"><div class="comment-user"><span class="comment-avatar">A</span><span class="comment-name">Andy_Z</span></div><div class="comment-text">整体不错，偶尔加载有点慢，可能是网络问题。剧集资源比较丰富。</div></div>
+                    <div class="comment-item"><div class="comment-user"><span class="comment-avatar">月</span><span class="comment-name">月半弯</span></div><div class="comment-text">犯罪悬疑类是我最爱，真探第四季氛围拉满，电脑上看沉浸感强。</div></div>
+                </div>
+            </section>
+
+            <!-- 9. 相关资讯 -->
+            <section class="content-section" id="news">
+                <div class="section-header">
+                    <h2 class="section-title">相关资讯</h2>
+                </div>
+                <div class="news-list">
+                    <div class="news-item">
+                        <div class="news-title-row">
+                            <span class="news-title">2024秋季美剧新剧前瞻：科幻与悬疑题材集中爆发</span>
+                            <span class="news-date">2024-08-12</span>
+                        </div>
+                        <p class="news-summary">各大平台公布秋季档片单，科幻改编与犯罪悬疑类新剧占比明显上升，多部大制作值得关注。</p>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-title-row">
+                            <span class="news-title">经典美剧重制版陆续上线，电脑端观看体验升级</span>
+                            <span class="news-date">2024-07-28</span>
+                        </div>
+                        <p class="news-summary">多部经典剧集推出高清重制版本，画面比例适配现代屏幕，电脑端观看效果更佳。</p>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-title-row">
+                            <span class="news-title">流媒体平台加码美剧制作，犯罪悬疑类最受青睐</span>
+                            <span class="news-date">2024-07-15</span>
+                        </div>
+                        <p class="news-summary">据行业报道，犯罪悬疑类美剧的预订量持续增长，观众对强情节、高反转的剧集需求旺盛。</p>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-title-row">
+                            <span class="news-title">电脑端追剧成趋势，大屏观看比例上升</span>
+                            <span class="news-date">2024-06-30</span>
+                        </div>
+                        <p class="news-summary">调查显示，越来越多的观众选择在电脑或电视端观看长视频，手机端更多用于短视频与碎片时间。</p>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-title-row">
+                            <span class="news-title">美剧字幕组生态观察：效率与质量的平衡</span>
+                            <span class="news-date">2024-06-18</span>
+                        </div>
+                        <p class="news-summary">热门美剧的字幕制作周期缩短，观众对翻译质量与时间轴精准度的要求不断提高。</p>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-title-row">
+                            <span class="news-title">暑期档美剧回顾：喜剧与生活类表现亮眼</span>
+                            <span class="news-date">2024-06-05</span>
+                        </div>
+                        <p class="news-summary">今年暑期档，轻松喜剧与家庭生活类美剧收视稳定，成为观众放松心情的选择。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 10. 相关推荐 -->
+            <section class="content-section" id="recommend-tags">
+                <div class="section-header">
+                    <h2 class="section-title">相关推荐</h2>
+                    <span class="section-subtitle">按具体方向查找</span>
+                </div>
+                <div class="recommend-tags">
+                    <span class="recommend-tag">犯罪悬疑美剧推荐</span>
+                    <span class="recommend-tag">科幻太空歌剧</span>
+                    <span class="recommend-tag">完结美剧一口气看</span>
+                    <span class="recommend-tag">美剧电脑版缓存下载</span>
+                    <span class="recommend-tag">适合睡前看的生活剧</span>
+                    <span class="recommend-tag">高评分律政美剧</span>
+                    <span class="recommend-tag">军事动作类美剧</span>
+                    <span class="recommend-tag">美剧电脑版字幕设置</span>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- 右栏 -->
+        <aside class="right-sidebar" aria-label="辅助导航">
+            <div class="sidebar-section">
+                <div class="sidebar-title">页内目录</div>
+                <nav class="toc-list" aria-label="页内目录">
+                    <a href="/#intro">关于电脑版</a>
+                    <a href="/#hot-recommend">热门推荐</a>
+                    <a href="/#latest-update">最新更新</a>
+                    <a href="/#category">分类浏览</a>
+                    <a href="/#deep-dive">深度解析</a>
+                    <a href="/#experience">体验指南</a>
+                    <a href="/#faq">常见问题</a>
+                    <a href="/#comments">用户评论</a>
+                    <a href="/#news">相关资讯</a>
+                    <a href="/#recommend-tags">相关推荐</a>
+                </nav>
+            </div>
+            <div class="sidebar-section">
+                <div class="sidebar-title">热门条目</div>
+                <div class="hot-list">
+                    <div class="hot-item"><span class="hot-rank">1</span><span class="hot-text">《罪恶黑名单》第八季</span></div>
+                    <div class="hot-item"><span class="hot-rank">2</span><span class="hot-text">《苍穹浩瀚》第六季</span></div>
+                    <div class="hot-item"><span class="hot-rank">3</span><span class="hot-text">《真探》第四季</span></div>
+                    <div class="hot-item"><span class="hot-rank">4</span><span class="hot-text">《我们这一天》最终季</span></div>
+                    <div class="hot-item"><span class="hot-rank">5</span><span class="hot-text">《了不起的麦瑟尔夫人》第四季</span></div>
+                </div>
+            </div>
+            <div class="sidebar-section">
+                <div class="sidebar-title">延伸阅读</div>
+                <div class="extend-list">
+                    <a href="/#deep-dive">电脑版与手机版区别对比</a>
+                    <a href="/#experience">缓存下载与离线观看指南</a>
+                    <a href="/#faq">字幕格式支持说明</a>
+                    <a href="/#news">2024秋季美剧前瞻</a>
+                    <a href="/#recommend-tags">高评分律政美剧推荐</a>
+                </div>
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- 页尾 -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <svg viewBox="0 0 100 100" width="30" height="30" aria-hidden="true">
+                    <circle cx="50" cy="50" r="45" fill="#f5c542"/>
+                    <path d="M35 30 L70 50 L35 70 Z" fill="#1c2b4a"/>
+                </svg>
+                <span class="footer-brand-name">人人美剧电脑版</span>
+                <p class="footer-desc">面向美剧爱好者的电脑端追剧工具，聚合热门剧集与分类筛选，提供流畅的观看与缓存体验。</p>
+            </div>
+            <div>
+                <div class="footer-col-title">热门分类</div>
+                <div class="footer-links">
+                    <a href="/#category">犯罪悬疑</a>
+                    <a href="/#category">科幻奇幻</a>
+                    <a href="/#category">剧情生活</a>
+                    <a href="/#category">喜剧轻喜</a>
+                </div>
+            </div>
+            <div>
+                <div class="footer-col-title">使用帮助</div>
+                <div class="footer-links">
+                    <a href="/#experience">体验指南</a>
+                    <a href="/#faq">常见问题</a>
+                    <a href="/#deep-dive">深度解析</a>
+                    <a href="/#news">相关资讯</a>
+                </div>
+            </div>
+            <div>
+                <div class="footer-col-title">快速入口</div>
+                <div class="footer-links">
+                    <a href="/#hot-recommend">热门推荐</a>
+                    <a href="/#latest-update">最新更新</a>
+                    <a href="/#comments">用户评论</a>
+                    <a href="/#recommend-tags">相关推荐</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2024 人人美剧电脑版 · 页面内容仅供参考</span>
+            <span>部分内容为示例数据，仅用于展示页面结构</span>
+        </div>
+    </footer>
+
+    <!-- 轻量交互脚本 -->
+    <script>
+        (function() {
+            // 搜索功能：筛选卡片
+            const searchInput = document.getElementById('searchInput');
+            const searchBtn = document.getElementById('searchBtn');
+            const cardGrid = document.getElementById('cardGrid');
+            const cards = Array.from(cardGrid.querySelectorAll('.content-card'));
+            const noResults = document.getElementById('noResults');
+            const filterBtns = document.querySelectorAll('.filter-btn');
+
+            let currentFilter = 'all';
+            let currentSearch = '';
+
+            function applyFilters() {
+                let visibleCount = 0;
+                cards.forEach(card => {
+                    const category = card.dataset.category || '';
+                    const title = card.querySelector('.card-title')?.textContent || '';
+                    const desc = card.querySelector('.card-desc')?.textContent || '';
+                    const tags = Array.from(card.querySelectorAll('.tag')).map(t => t.textContent).join(' ');
+                    const searchText = (title + ' ' + desc + ' ' + tags + ' ' + category).toLowerCase();
+
+                    const matchesFilter = (currentFilter === 'all' || category === currentFilter);
+                    const matchesSearch = (currentSearch === '' || searchText.includes(currentSearch.toLowerCase()));
+
+                    if (matchesFilter && matchesSearch) {
+                        card.classList.remove('hidden');
+                        visibleCount++;
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+                noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+            }
+
+            // 搜索输入
+            searchInput.addEventListener('input', function() {
+                currentSearch = this.value.trim();
+                applyFilters();
+            });
+
+            searchBtn.addEventListener('click', function() {
+                currentSearch = searchInput.value.trim();
+                applyFilters();
+            });
+
+            // 筛选按钮
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    currentFilter = this.dataset.filter || 'all';
+                    applyFilters();
+                });
+            });
+
+            // 下载按钮提示（仅演示，不跳转）
+            const downloadBtn = document.getElementById('downloadBtn');
+            const heroDownloadBtn = document.getElementById('heroDownloadBtn');
+            function showDownloadTip() {
+                alert('人人美剧电脑版下载：请通过官方渠道获取安装包。本页面为内容展示，不提供直接下载链接。');
+            }
+            downloadBtn.addEventListener('click', showDownloadTip);
+            heroDownloadBtn.addEventListener('click', showDownloadTip);
+
+            // 确保所有锚点链接指向存在的元素
+            document.querySelectorAll('a[href^="/#"]').forEach(link => {
+                const targetId = link.getAttribute('href').replace('/#', '');
+                if (targetId && !document.getElementById(targetId)) {
+                    console.warn('锚点目标不存在:', targetId);
+                }
+            });
+        })();
+    </script>
+</body>
+  </html>
