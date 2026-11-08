@@ -1,0 +1,1598 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日大赛免费观赛-体育赛事直播_免费观赛平台_平台对比推荐</title>
+  <meta name="description" content="每日大赛免费观赛指南，提供足球、篮球、电竞等热门赛事免费直播入口、观赛时间表与平台对比，适合想免费看大赛的体育迷快速找到可靠观赛渠道。">
+  <meta name="keywords" content="免费体育直播,大赛直播平台,足球免费观看,篮球在线直播,电竞赛事直播">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%230d2f4b'/%3E%3Cpath d='M16 6l2.5 7.5L26 16l-7.5 2.5L16 26l-2.5-7.5L6 16l7.5-2.5z' fill='%23f5b342'/%3E%3C/svg%3E">
+  <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+  <style>
+    /* ===== 设计系统 ===== */
+    :root {
+      --ink: #0b1a2a;
+      --ink-soft: #2c3e50;
+      --muted: #5d6d7e;
+      --line: #dbe4ec;
+      --line-strong: #b9c8d6;
+      --bg: #f4f7fa;
+      --panel: #ffffff;
+      --brand: #0d2f4b;
+      --brand-2: #1b5a7a;
+      --accent: #f5b342;
+      --accent-soft: #fdf2dc;
+      --tag-bg: #e9f0f6;
+      --radius: 14px;
+      --radius-sm: 8px;
+      --shadow: 0 4px 18px rgba(11,26,42,.07);
+      --shadow-hover: 0 10px 28px rgba(11,26,42,.12);
+      --container: 1380px;
+      --left-w: 178px;
+      --right-w: 240px;
+      --gap: 22px;
+      --header-h: 64px;
+      --notice-h: 40px;
+      --sticky-offset: calc(var(--notice-h) + var(--header-h) + 14px);
+      --font: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Noto Sans SC", system-ui, -apple-system, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--ink);
+      font-size: 15px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--brand-2); text-decoration: none; }
+    a:hover { color: var(--brand); text-decoration: underline; }
+    ul, ol { list-style: none; }
+    img, svg { display: block; max-width: 100%; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+
+    .container {
+      width: 100%;
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ===== 吸顶公告条 ===== */
+    .notice-bar {
+      position: sticky;
+      top: 0;
+      z-index: 60;
+      height: var(--notice-h);
+      background: linear-gradient(90deg, #0d2f4b 0%, #1b5a7a 100%);
+      color: #eaf3f9;
+      display: flex;
+      align-items: center;
+      font-size: 13px;
+      overflow: hidden;
+    }
+    .notice-bar .container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .notice-bar .badge {
+      background: var(--accent);
+      color: #0d2f4b;
+      font-weight: 700;
+      font-size: 11px;
+      padding: 1px 8px;
+      border-radius: 20px;
+      flex-shrink: 0;
+    }
+    .notice-bar a { color: #fff; text-decoration: underline; text-underline-offset: 2px; }
+    .notice-bar a:hover { color: var(--accent); }
+
+    /* ===== 吸顶页头 ===== */
+    .site-header {
+      position: sticky;
+      top: var(--notice-h);
+      z-index: 55;
+      height: var(--header-h);
+      background: rgba(255,255,255,.97);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 2px 10px rgba(11,26,42,.04);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      height: 100%;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+      text-decoration: none;
+    }
+    .brand:hover { text-decoration: none; }
+    .brand-logo { width: 34px; height: 34px; flex-shrink: 0; }
+    .brand-text {
+      font-size: 19px;
+      font-weight: 800;
+      color: var(--brand);
+      letter-spacing: .5px;
+      white-space: nowrap;
+    }
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      flex: 1;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .header-nav::-webkit-scrollbar { display: none; }
+    .header-nav a {
+      padding: 6px 13px;
+      border-radius: 20px;
+      font-size: 14px;
+      color: var(--ink-soft);
+      white-space: nowrap;
+      transition: background .15s, color .15s;
+    }
+    .header-nav a:hover {
+      background: var(--tag-bg);
+      color: var(--brand);
+      text-decoration: none;
+    }
+    .header-search {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+    .header-search input {
+      width: 170px;
+      padding: 7px 12px;
+      border: 1px solid var(--line-strong);
+      border-radius: 20px;
+      font-size: 13px;
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--ink);
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .header-search input:focus {
+      outline: none;
+      border-color: var(--brand-2);
+      box-shadow: 0 0 0 3px rgba(27,90,122,.12);
+    }
+    .header-search button {
+      padding: 7px 15px;
+      border: none;
+      border-radius: 20px;
+      background: var(--brand);
+      color: #fff;
+      font-size: 13px;
+      font-family: var(--font);
+      cursor: pointer;
+      transition: background .15s;
+      white-space: nowrap;
+    }
+    .header-search button:hover { background: var(--brand-2); }
+
+    /* ===== 首屏 ===== */
+    .hero {
+      background: linear-gradient(135deg, #0d2f4b 0%, #16415f 55%, #1b5a7a 100%);
+      color: #fff;
+      padding: 42px 0 38px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -80px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 480px;
+      height: 480px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(245,179,66,.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 40px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .hero h1 {
+      font-size: clamp(26px, 3.2vw, 38px);
+      font-weight: 800;
+      letter-spacing: .5px;
+      line-height: 1.3;
+      margin-bottom: 14px;
+      color: #fff;
+    }
+    .hero-desc {
+      font-size: 15.5px;
+      line-height: 1.8;
+      color: #c9dce8;
+      max-width: 640px;
+      margin-bottom: 22px;
+    }
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      margin-bottom: 26px;
+    }
+    .hero-stat strong {
+      display: block;
+      font-size: 22px;
+      color: var(--accent);
+      font-weight: 800;
+      line-height: 1.2;
+    }
+    .hero-stat span {
+      font-size: 12.5px;
+      color: #a8c3d4;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 10px 24px;
+      background: var(--accent);
+      color: #0d2f4b;
+      font-weight: 700;
+      font-size: 14.5px;
+      border-radius: 26px;
+      border: none;
+      cursor: pointer;
+      font-family: var(--font);
+      transition: transform .15s, box-shadow .15s;
+    }
+    .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(245,179,66,.35); text-decoration: none; color: #0d2f4b; }
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 10px 22px;
+      background: transparent;
+      color: #dceaf3;
+      font-size: 14.5px;
+      border-radius: 26px;
+      border: 1px solid rgba(255,255,255,.35);
+      cursor: pointer;
+      font-family: var(--font);
+      transition: background .15s, border-color .15s;
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.6); text-decoration: none; color: #fff; }
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .hero-visual svg { width: 100%; max-width: 300px; height: auto; }
+
+    /* ===== 三栏主布局 ===== */
+    .layout {
+      display: grid;
+      grid-template-columns: var(--left-w) minmax(0, 1fr) var(--right-w);
+      gap: var(--gap);
+      padding: 28px 0 50px;
+      align-items: start;
+    }
+    .col-left {
+      position: sticky;
+      top: var(--sticky-offset);
+      align-self: start;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .col-right {
+      position: sticky;
+      top: var(--sticky-offset);
+      align-self: start;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .col-main {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    /* ===== 栏内面板通用 ===== */
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .panel-pad { padding: 18px 20px; }
+    .panel-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--brand);
+      padding: 14px 18px 10px;
+      border-bottom: 1px solid var(--line);
+      letter-spacing: .3px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .panel-title::before {
+      content: "";
+      width: 4px;
+      height: 15px;
+      border-radius: 3px;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+    .side-nav { padding: 8px 10px 12px; }
+    .side-nav a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border-radius: var(--radius-sm);
+      font-size: 13.5px;
+      color: var(--ink-soft);
+      transition: background .12s, color .12s;
+      line-height: 1.4;
+    }
+    .side-nav a:hover, .side-nav a.active {
+      background: var(--tag-bg);
+      color: var(--brand);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .side-nav a .dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--line-strong);
+      flex-shrink: 0;
+    }
+    .side-nav a:hover .dot, .side-nav a.active .dot { background: var(--accent); }
+
+    /* ===== 中栏板块通用 ===== */
+    .section-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+    .section-head h2 {
+      font-size: 19px;
+      font-weight: 800;
+      color: var(--brand);
+      letter-spacing: .3px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-head h2::before {
+      content: "";
+      width: 5px;
+      height: 18px;
+      border-radius: 3px;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+    .section-head .more-link {
+      font-size: 13px;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .section-head .more-link:hover { color: var(--brand-2); }
+    .section-body { padding: 22px; }
+    .section-body.tight { padding: 16px 18px; }
+
+    /* ===== 简介 ===== */
+    .intro-text p {
+      margin-bottom: 12px;
+      color: var(--ink-soft);
+      line-height: 1.85;
+      font-size: 14.5px;
+    }
+    .intro-text p:last-child { margin-bottom: 0; }
+    .intro-text strong { color: var(--brand); }
+
+    /* ===== 热门内容卡片 ===== */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .content-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px 16px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      transition: transform .18s, box-shadow .18s, border-color .18s;
+    }
+    .content-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--line-strong);
+    }
+    .card-type {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--brand-2);
+      background: var(--accent-soft);
+      padding: 2px 9px;
+      border-radius: 20px;
+      width: fit-content;
+    }
+    .content-card h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.45;
+    }
+    .content-card h3 a { color: inherit; }
+    .content-card h3 a:hover { color: var(--brand-2); text-decoration: none; }
+    .card-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+      flex: 1;
+    }
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+    .tag {
+      font-size: 11px;
+      color: var(--ink-soft);
+      background: var(--tag-bg);
+      padding: 2px 8px;
+      border-radius: 12px;
+      white-space: nowrap;
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 11.5px;
+      color: var(--muted);
+      border-top: 1px dashed var(--line);
+      padding-top: 9px;
+      margin-top: 2px;
+    }
+    .card-meta .heat { color: #c0392b; font-weight: 700; }
+
+    /* ===== 最新更新紧凑列表 ===== */
+    .update-list { display: flex; flex-direction: column; }
+    .update-item {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      padding: 11px 0;
+      border-bottom: 1px dashed var(--line);
+      font-size: 14px;
+    }
+    .update-item:last-child { border-bottom: none; }
+    .update-item .u-name {
+      font-weight: 700;
+      color: var(--ink);
+      flex-shrink: 0;
+      max-width: 46%;
+    }
+    .update-item .u-name a { color: inherit; }
+    .update-item .u-name a:hover { color: var(--brand-2); text-decoration: none; }
+    .update-item .u-summary {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .update-item .u-time {
+      margin-left: auto;
+      font-size: 12px;
+      color: #95a5a6;
+      flex-shrink: 0;
+    }
+
+    /* ===== 分类入口 ===== */
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    .cat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 18px 8px;
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      text-align: center;
+      transition: background .15s, border-color .15s, transform .15s;
+    }
+    .cat-item:hover {
+      background: #fff;
+      border-color: var(--brand-2);
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+    .cat-item .cat-icon { font-size: 22px; line-height: 1; }
+    .cat-item .cat-name {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .cat-item .cat-count { font-size: 11px; color: var(--muted); }
+
+    /* ===== 深度解析正文 ===== */
+    .deep-dive h3 {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--brand);
+      margin: 20px 0 10px;
+      padding-left: 10px;
+      border-left: 4px solid var(--accent);
+      line-height: 1.4;
+    }
+    .deep-dive h3:first-child { margin-top: 0; }
+    .deep-dive p {
+      font-size: 14.5px;
+      color: var(--ink-soft);
+      line-height: 1.85;
+      margin-bottom: 11px;
+    }
+    .deep-dive ul {
+      margin: 8px 0 14px 0;
+      padding-left: 0;
+    }
+    .deep-dive ul li {
+      position: relative;
+      padding-left: 18px;
+      font-size: 14px;
+      color: var(--ink-soft);
+      line-height: 1.8;
+      margin-bottom: 5px;
+    }
+    .deep-dive ul li::before {
+      content: "";
+      position: absolute;
+      left: 2px;
+      top: 11px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0 16px;
+      font-size: 13.5px;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+    }
+    .compare-table th, .compare-table td {
+      border: 1px solid var(--line);
+      padding: 9px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .compare-table th {
+      background: var(--tag-bg);
+      color: var(--brand);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .compare-table td { color: var(--ink-soft); }
+
+    /* ===== 体验指南步骤 ===== */
+    .steps { display: flex; flex-direction: column; gap: 14px; }
+    .step-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--brand);
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+    .step-body h4 {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 3px;
+    }
+    .step-body p {
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* ===== FAQ ===== */
+    .faq-list { display: flex; flex-direction: column; gap: 0; }
+    .faq-list details {
+      border-bottom: 1px solid var(--line);
+      padding: 0;
+    }
+    .faq-list details:last-child { border-bottom: none; }
+    .faq-list summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 13px 0;
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color .15s;
+    }
+    .faq-list summary::-webkit-details-marker { display: none; }
+    .faq-list summary::before {
+      content: "＋";
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--brand-2);
+      width: 18px;
+      flex-shrink: 0;
+      text-align: center;
+      transition: transform .2s;
+    }
+    .faq-list details[open] summary::before { content: "－"; }
+    .faq-list summary:hover { color: var(--brand-2); }
+    .faq-answer {
+      padding: 0 0 14px 26px;
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    /* ===== 用户评论 ===== */
+    .comment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 12px;
+      padding: 18px;
+    }
+    .comment-card {
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      font-size: 13px;
+    }
+    .comment-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+    .avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--brand-2);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .comment-name { font-weight: 700; color: var(--ink); font-size: 12.5px; }
+    .comment-text { color: var(--ink-soft); line-height: 1.65; }
+    .comment-text .highlight { color: var(--brand-2); font-weight: 600; }
+
+    /* ===== 相关资讯 ===== */
+    .news-list { display: flex; flex-direction: column; }
+    .news-item {
+      padding: 13px 0;
+      border-bottom: 1px dashed var(--line);
+    }
+    .news-item:last-child { border-bottom: none; }
+    .news-item .news-title {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 3px;
+    }
+    .news-item .news-title a { color: inherit; }
+    .news-item .news-title a:hover { color: var(--brand-2); text-decoration: none; }
+    .news-item .news-meta {
+      font-size: 12px;
+      color: #95a5a6;
+      margin-bottom: 4px;
+    }
+    .news-item .news-summary {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ===== 相关推荐标签 ===== */
+    .rec-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      padding: 16px 18px;
+    }
+    .rec-tags a {
+      display: inline-block;
+      padding: 6px 15px;
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      font-size: 13px;
+      color: var(--ink-soft);
+      transition: background .15s, border-color .15s, color .15s;
+    }
+    .rec-tags a:hover {
+      background: var(--accent-soft);
+      border-color: var(--accent);
+      color: var(--brand);
+      text-decoration: none;
+    }
+
+    /* ===== 趋势观察 ===== */
+    .trend-list { display: flex; flex-direction: column; gap: 12px; }
+    .trend-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 11px 13px;
+      background: var(--bg);
+      border-radius: var(--radius-sm);
+      border-left: 3px solid var(--accent);
+    }
+    .trend-item .trend-num {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--brand-2);
+      line-height: 1.2;
+      min-width: 24px;
+    }
+    .trend-item .trend-content h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 2px;
+    }
+    .trend-item .trend-content p {
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    /* ===== 右栏 ===== */
+    .toc { padding: 10px 14px 14px; }
+    .toc ul { display: flex; flex-direction: column; gap: 2px; }
+    .toc a {
+      display: block;
+      padding: 5px 8px;
+      border-radius: 6px;
+      font-size: 13px;
+      color: var(--ink-soft);
+      border-left: 2px solid transparent;
+      transition: background .12s, border-color .12s;
+    }
+    .toc a:hover {
+      background: var(--tag-bg);
+      border-left-color: var(--accent);
+      color: var(--brand);
+      text-decoration: none;
+    }
+    .hot-list { padding: 8px 14px 14px; }
+    .hot-list li {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      padding: 7px 0;
+      border-bottom: 1px dashed var(--line);
+      font-size: 13px;
+    }
+    .hot-list li:last-child { border-bottom: none; }
+    .hot-list .rank {
+      width: 18px;
+      height: 18px;
+      border-radius: 5px;
+      background: var(--tag-bg);
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .hot-list li:nth-child(1) .rank { background: #c0392b; color: #fff; }
+    .hot-list li:nth-child(2) .rank { background: #e67e22; color: #fff; }
+    .hot-list li:nth-child(3) .rank { background: var(--accent); color: #0d2f4b; }
+    .hot-list a { color: var(--ink-soft); line-height: 1.45; }
+    .hot-list a:hover { color: var(--brand-2); }
+    .hot-list .hot-tag {
+      margin-left: auto;
+      font-size: 10.5px;
+      color: #95a5a6;
+      flex-shrink: 0;
+    }
+    .extend-list { padding: 8px 14px 14px; }
+    .extend-list li { padding: 7px 0; border-bottom: 1px dashed var(--line); font-size: 13px; }
+    .extend-list li:last-child { border-bottom: none; }
+    .extend-list a { color: var(--ink-soft); }
+    .extend-list a:hover { color: var(--brand-2); }
+
+    /* ===== 页尾 ===== */
+    .site-footer {
+      background: var(--brand);
+      color: #b9cfdd;
+      padding: 36px 0 20px;
+      font-size: 13px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 26px;
+      margin-bottom: 24px;
+    }
+    .footer-brand .f-logo {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 10px;
+    }
+    .footer-brand .f-logo svg { width: 28px; height: 28px; }
+    .footer-brand .f-name {
+      font-size: 17px;
+      font-weight: 800;
+      color: #fff;
+    }
+    .footer-brand p { line-height: 1.7; color: #8fadc2; max-width: 300px; }
+    .footer-col h4 {
+      font-size: 13.5px;
+      color: #fff;
+      font-weight: 700;
+      margin-bottom: 9px;
+    }
+    .footer-col ul { display: flex; flex-direction: column; gap: 5px; }
+    .footer-col a { color: #9db9cc; font-size: 12.5px; }
+    .footer-col a:hover { color: var(--accent); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.1);
+      padding-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 12px;
+      color: #7d9db3;
+    }
+
+    /* ===== 搜索无结果提示 ===== */
+    .search-empty {
+      display: none;
+      padding: 24px 18px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+      background: var(--bg);
+      border: 1px dashed var(--line-strong);
+      border-radius: var(--radius-sm);
+      margin-top: 12px;
+    }
+    .search-empty.show { display: block; }
+
+    /* ===== 锚点偏移 ===== */
+    section[id], .anchor-target {
+      scroll-margin-top: var(--sticky-offset);
+    }
+
+    /* ===== 响应式 ===== */
+    @media (max-width: 1180px) {
+      .layout {
+        grid-template-columns: var(--left-w) minmax(0, 1fr);
+      }
+      .col-right {
+        position: static;
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 16px;
+      }
+    }
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 24px; }
+      .hero-visual { display: none; }
+      .header-search input { width: 130px; }
+      .cat-grid { grid-template-columns: repeat(4, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 760px) {
+      :root { --notice-h: 36px; --header-h: 58px; }
+      .layout {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding: 18px 0 36px;
+      }
+      .col-left {
+        position: static;
+        flex-direction: row;
+        overflow-x: auto;
+        gap: 8px;
+        padding-bottom: 4px;
+        scrollbar-width: thin;
+      }
+      .col-left .panel { flex-shrink: 0; }
+      .col-left .panel-title { display: none; }
+      .side-nav {
+        display: flex;
+        flex-direction: row;
+        gap: 4px;
+        padding: 6px;
+      }
+      .side-nav a { white-space: nowrap; padding: 7px 13px; font-size: 13px; }
+      .side-nav a .dot { display: none; }
+      .col-right {
+        grid-template-columns: 1fr;
+      }
+      .header-nav { display: none; }
+      .header-search input { width: 120px; }
+      .header-search button { padding: 6px 11px; }
+      .cat-grid { grid-template-columns: repeat(2, 1fr); }
+      .card-grid { grid-template-columns: 1fr; }
+      .comment-grid { grid-template-columns: 1fr; padding: 14px; }
+      .section-body { padding: 16px; }
+      .section-body.tight { padding: 12px 14px; }
+      .hero { padding: 30px 0 28px; }
+      .hero-stats { gap: 16px; }
+      .hero-stat strong { font-size: 18px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 20px; }
+      .update-item { flex-wrap: wrap; gap: 4px 10px; }
+      .update-item .u-name { max-width: 100%; }
+      .update-item .u-time { margin-left: 0; }
+      .compare-table { font-size: 12px; }
+      .compare-table th, .compare-table td { padding: 7px 8px; }
+    }
+    @media (max-width: 420px) {
+      .header-search input { width: 90px; font-size: 12px; }
+      .brand-text { font-size: 16px; }
+      .hero-actions .btn-ghost { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== 吸顶公告条 ===== -->
+  <div class="notice-bar" role="region" aria-label="站点公告">
+    <div class="container">
+      <span class="badge">NEW</span>
+      <span>本周新增 12 场免费大赛直播：欧冠淘汰赛、NBA 焦点战、英雄联盟 LPL 春季赛。</span>
+      <span style="margin-left:auto;flex-shrink:0;"><a href="#latest-updates">查看赛程 →</a></span>
+    </div>
+  </div>
+
+  <!-- ===== 吸顶页头 ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/" aria-label="每日大赛免费观赛 首页">
+        <svg class="brand-logo" viewBox="0 0 32 32" aria-hidden="true">
+          <circle cx="16" cy="16" r="15" fill="#0d2f4b"/>
+          <path d="M16 5l2.6 7.8L26 16l-7.4 3.2L16 27l-2.6-7.8L6 16l7.4-3.2z" fill="#f5b342"/>
+        </svg>
+        <span class="brand-text">每日大赛免费观赛</span>
+      </a>
+      <nav class="header-nav" aria-label="频道导航">
+        <a href="#intro">简介</a>
+        <a href="#hot-picks">热门赛事</a>
+        <a href="#latest-updates">最新赛程</a>
+        <a href="#categories">分类</a>
+        <a href="#deep-dive">深度解析</a>
+        <a href="#guide">观赛指南</a>
+        <a href="#faq">常见问题</a>
+        <a href="#comments">观众评论</a>
+        <a href="#news">赛事资讯</a>
+        <a href="#recommend">相关推荐</a>
+      </nav>
+      <div class="header-search" role="search">
+        <input type="search" id="siteSearch" placeholder="搜索赛事、平台…" aria-label="搜索站内内容">
+        <button type="button" id="searchBtn">搜索</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== 首屏 ===== -->
+  <section class="hero" aria-label="首屏介绍">
+    <div class="container hero-inner">
+      <div>
+        <h1>每日大赛免费观赛</h1>
+        <p class="hero-desc">
+          聚合足球、篮球、电竞等热门大赛的免费直播入口与观赛时间表。每个比赛日更新可看渠道、清晰度与开赛时间，帮你在不付费的前提下找到稳定、合法的观赛方式。
+        </p>
+        <div class="hero-stats">
+          <div class="hero-stat"><strong>18</strong><span>今日可看赛事</span></div>
+          <div class="hero-stat"><strong>6</strong><span>免费观赛平台</span></div>
+          <div class="hero-stat"><strong>3.2万</strong><span>本周观赛人次</span></div>
+          <div class="hero-stat"><strong>4.8</strong><span>综合体验评分</span></div>
+        </div>
+        <div class="hero-actions">
+          <a class="btn-primary" href="#hot-picks">今日免费场次 →</a>
+          <a class="btn-ghost" href="#deep-dive">平台对比与选择</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <svg viewBox="0 0 320 320" role="img" aria-label="赛事直播视觉图">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#f5b342" stop-opacity=".9"/>
+              <stop offset="100%" stop-color="#f5b342" stop-opacity=".2"/>
+            </linearGradient>
+          </defs>
+          <circle cx="160" cy="160" r="140" fill="none" stroke="#4a7a96" stroke-width="1.5" stroke-dasharray="4 6"/>
+          <circle cx="160" cy="160" r="100" fill="none" stroke="#4a7a96" stroke-width="1" opacity=".6"/>
+          <rect x="80" y="120" width="160" height="90" rx="12" fill="#16415f" stroke="#2e6d8e" stroke-width="1.5"/>
+          <rect x="94" y="134" width="132" height="62" rx="6" fill="#0d2f4b"/>
+          <path d="M148 150v30l24-15z" fill="#f5b342"/>
+          <circle cx="160" cy="74" r="16" fill="url(#g1)"/>
+          <path d="M160 58l3.5 10.5L174 72l-10.5 3.5L160 86l-3.5-10.5L146 72l10.5-3.5z" fill="#f5b342"/>
+          <text x="160" y="238" text-anchor="middle" fill="#a8c3d4" font-size="13" font-family="sans-serif">LIVE · 免费观赛入口</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 三栏主内容 ===== -->
+  <div class="container layout">
+
+    <!-- 左栏 -->
+    <aside class="col-left" aria-label="栏目导航">
+      <div class="panel">
+        <div class="panel-title">频道目录</div>
+        <nav class="side-nav" aria-label="页内频道">
+          <a href="#intro"><span class="dot"></span>平台简介</a>
+          <a href="#hot-picks"><span class="dot"></span>热门赛事推荐</a>
+          <a href="#latest-updates"><span class="dot"></span>最新赛程更新</a>
+          <a href="#categories"><span class="dot"></span>赛事分类</a>
+          <a href="#deep-dive"><span class="dot"></span>免费观赛深度解析</a>
+          <a href="#guide"><span class="dot"></span>观赛体验指南</a>
+          <a href="#faq"><span class="dot"></span>常见问题</a>
+          <a href="#comments"><span class="dot"></span>观众评论</a>
+          <a href="#news"><span class="dot"></span>相关赛事资讯</a>
+          <a href="#recommend"><span class="dot"></span>相关推荐</a>
+          <a href="#trend"><span class="dot"></span>趋势观察</a>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- 中栏 -->
+    <main class="col-main">
+
+      <!-- 1. 内容简介 -->
+      <section id="intro" class="panel section-body anchor-target">
+        <div class="section-head">
+          <h2>每日大赛免费观赛是什么</h2>
+          <a class="more-link" href="#guide">了解观赛方式 →</a>
+        </div>
+        <div class="intro-text">
+          <p><strong>每日大赛免费观赛</strong>是一个面向体育迷与电竞观众的内容聚合页面，每天整理足球、篮球、电竞等热门大赛的免费直播入口、开赛时间与清晰度信息。无论你是想在通勤路上用手机看一场欧冠淘汰赛，还是周末在家投屏看 NBA 焦点战，这里都能帮你快速找到可用的免费观赛渠道，并提前了解各平台的画质与稳定性差异。</p>
+          <p>很多观众在搜索“足球免费观看”或“篮球在线直播”时，常常被大量收费页面干扰。本页把真正可免费观看的大赛场次筛选出来，按照赛事类型、开赛时段和平台特点分类整理。你可以直接查看今日热门场次，也可以从分类入口进入特定联赛，比如“欧冠免费直播”“NBA 免费观看”“LPL 赛事直播”等具体方向。</p>
+          <p>对于想比较不同平台优劣的用户，页面的深度解析部分提供了免费观赛平台对比表，从画质、延迟、广告时长和解说质量四个维度展开。如果你是第一次尝试在移动端看大赛，体验指南会告诉你如何调整清晰度、如何投屏到电视、以及如何避免卡顿。所有内容围绕“免费”和“大赛”两个核心需求组织，不做无关扩展。</p>
+          <p>页面每个比赛日更新一次赛程与可用入口，热门场次会标注热度与预计观赛人数。你还可以通过站内搜索查找具体球队、联赛或平台名称，搜索结果会直接定位到相关卡片或列表条目。</p>
+        </div>
+      </section>
+
+      <!-- 2. 热门内容推荐 -->
+      <section id="hot-picks" class="anchor-target">
+        <div class="section-head">
+          <h2>今日热门免费大赛场次</h2>
+          <a class="more-link" href="#latest-updates">查看全部赛程 →</a>
+        </div>
+        <div class="card-grid">
+          <article class="content-card" data-search="欧冠 足球 免费直播 皇马 曼城">
+            <span class="card-type">⚽ 足球 · 欧冠</span>
+            <h3><a href="#hot-picks">欧冠淘汰赛：皇马 vs 曼城 免费直播</a></h3>
+            <p class="card-desc">两支夺冠热门提前相遇，首回合攻防节奏快。免费入口提供高清信号，解说为中文。</p>
+            <div class="card-tags"><span class="tag">欧冠免费直播</span><span class="tag">足球强强对话</span><span class="tag">高清信号</span></div>
+            <div class="card-meta"><span class="heat">🔥 2.8万热度</span><span>今日 03:00</span></div>
+          </article>
+          <article class="content-card" data-search="NBA 篮球 免费观看 湖人 勇士">
+            <span class="card-type">🏀 篮球 · NBA</span>
+            <h3><a href="#hot-picks">NBA 焦点战：湖人 vs 勇士 在线直播</a></h3>
+            <p class="card-desc">西部卡位关键战，两队核心均出战。免费线路支持手机与平板，第三节后画质自动提升。</p>
+            <div class="card-tags"><span class="tag">NBA免费观看</span><span class="tag">篮球在线直播</span><span class="tag">西部卡位战</span></div>
+            <div class="card-meta"><span class="heat">🔥 3.1万热度</span><span>明日 10:30</span></div>
+          </article>
+          <article class="content-card" data-search="LPL 电竞 英雄联盟 免费直播">
+            <span class="card-type">🎮 电竞 · LPL</span>
+            <h3><a href="#hot-picks">LPL 春季赛：JDG vs BLG 免费观赛</a></h3>
+            <p class="card-desc">榜首之争，BO3 拉满。免费直播间提供赛后复盘与实时数据面板，适合深度玩家。</p>
+            <div class="card-tags"><span class="tag">LPL赛事直播</span><span class="tag">英雄联盟免费看</span><span class="tag">榜首对决</span></div>
+            <div class="card-meta"><span class="heat">🔥 1.9万热度</span><span>今日 17:00</span></div>
+          </article>
+          <article class="content-card" data-search="英超 足球 免费直播 阿森纳 利物浦">
+            <span class="card-type">⚽ 足球 · 英超</span>
+            <h3><a href="#hot-picks">英超争冠战：阿森纳 vs 利物浦 免费入口</a></h3>
+            <p class="card-desc">积分榜前二直接对话，免费信号延迟较低。适合通勤途中用手机观看。</p>
+            <div class="card-tags"><span class="tag">英超免费直播</span><span class="tag">通勤看球</span><span class="tag">争冠关键战</span></div>
+            <div class="card-meta"><span class="heat">🔥 2.4万热度</span><span>本周日 23:30</span></div>
+          </article>
+          <article class="content-card" data-search="CBA 篮球 免费观看 辽宁 广东">
+            <span class="card-type">🏀 篮球 · CBA</span>
+            <h3><a href="#hot-picks">CBA 半决赛：辽宁 vs 广东 免费直播</a></h3>
+            <p class="card-desc">传统强队再碰面，免费线路含地方解说。适合习惯电视大屏的观众投屏观看。</p>
+            <div class="card-tags"><span class="tag">CBA免费直播</span><span class="tag">篮球大屏投屏</span><span class="tag">半决赛</span></div>
+            <div class="card-meta"><span class="heat">🔥 1.6万热度</span><span>明日 19:35</span></div>
+          </article>
+          <article class="content-card" data-search="德甲 足球 免费直播 拜仁 多特">
+            <span class="card-type">⚽ 足球 · 德甲</span>
+            <h3><a href="#hot-picks">德甲国家德比：拜仁 vs 多特 免费观看</a></h3>
+            <p class="card-desc">德国国家德比，免费平台提供多路解说切换。赛前有阵容分析，适合深度球迷。</p>
+            <div class="card-tags"><span class="tag">德甲免费观看</span><span class="tag">国家德比</span><span class="tag">多路解说</span></div>
+            <div class="card-meta"><span class="heat">🔥 1.3万热度</span><span>本周六 21:30</span></div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 3. 最新更新 -->
+      <section id="latest-updates" class="panel section-body tight anchor-target">
+        <div class="section-head">
+          <h2>最新赛程与直播入口更新</h2>
+          <a class="more-link" href="#categories">按分类筛选 →</a>
+        </div>
+        <ul class="update-list">
+          <li class="update-item"><span class="u-name"><a href="#hot-picks">欧冠：皇马 vs 曼城</a></span><span class="u-summary">新增高清免费信号，支持回看</span><span class="u-time">03-12</span></li>
+          <li class="update-item"><span class="u-name"><a href="#hot-picks">NBA：湖人 vs 勇士</a></span><span class="u-summary">免费线路扩容，移动端延迟降低</span><span class="u-time">03-12</span></li>
+          <li class="update-item"><span class="u-name"><a href="#hot-picks">LPL：JDG vs BLG</a></span><span class="u-summary">直播间加入实时数据面板</span><span class="u-time">03-12</span></li>
+          <li class="update-item"><span class="u-name"><a href="#hot-picks">英超：阿森纳 vs 利物浦</a></span><span class="u-summary">新增中文解说免费线路</span><span class="u-time">03-11</span></li>
+          <li class="update-item"><span class="u-name"><a href="#hot-picks">CBA：辽宁 vs 广东</a></span><span class="u-summary">开放电视端投屏入口</span><span class="u-time">03-11</span></li>
+          <li class="update-item"><span class="u-name"><a href="#hot-picks">德甲：拜仁 vs 多特</a></span><span class="u-summary">赛前阵容分析已上线</span><span class="u-time">03-11</span></li>
+          <li class="update-item"><span class="u-name"><a href="#hot-picks">欧冠：国米 vs 马竞</a></span><span class="u-summary">免费回放片段已整理</span><span class="u-time">03-10</span></li>
+          <li class="update-item"><span class="u-name"><a href="#hot-picks">NBA：凯尔特人 vs 雄鹿</a></span><span class="u-summary">新增低延迟线路，适合手机</span><span class="u-time">03-10</span></li>
+        </ul>
+      </section>
+
+      <!-- 4. 分类入口 -->
+      <section id="categories" class="panel section-body anchor-target">
+        <div class="section-head">
+          <h2>按赛事类型找免费直播</h2>
+          <a class="more-link" href="#recommend">更多方向 →</a>
+        </div>
+        <div class="cat-grid">
+          <a class="cat-item" href="#hot-picks"><span class="cat-icon">⚽</span><span class="cat-name">足球免费直播</span><span class="cat-count">欧冠·英超·德甲</span></a>
+          <a class="cat-item" href="#hot-picks"><span class="cat-icon">🏀</span><span class="cat-name">篮球免费观看</span><span class="cat-count">NBA·CBA</span></a>
+          <a class="cat-item" href="#hot-picks"><span class="cat-icon">🎮</span><span class="cat-name">电竞赛事直播</span><span class="cat-count">LPL·KPL</span></a>
+          <a class="cat-item" href="#hot-picks"><span class="cat-icon">🎾</span><span class="cat-name">网球大师赛</span><span class="cat-count">ATP·WTA</span></a>
+          <a class="cat-item" href="#hot-picks"><span class="cat-icon">🏎️</span><span class="cat-name">F1 大奖赛</span><span class="cat-count">排位·正赛</span></a>
+          <a class="cat-item" href="#hot-picks"><span class="cat-icon">🏐</span><span class="cat-name">排球联赛</span><span class="cat-count">国内·国际</span></a>
+          <a class="cat-item" href="#hot-picks"><span class="cat-icon">🥊</span><span class="cat-name">格斗与拳击</span><span class="cat-count">UFC·职业赛</span></a>
+          <a class="cat-item" href="#hot-picks"><span class="cat-icon">🏓</span><span class="cat-name">乒乓球赛事</span><span class="cat-count">WTT·全锦赛</span></a>
+        </div>
+      </section>
+
+      <!-- 5. 深度解析正文 -->
+      <section id="deep-dive" class="panel section-body anchor-target">
+        <div class="section-head">
+          <h2>免费观赛平台深度解析与选择</h2>
+          <a class="more-link" href="#faq">常见疑问 →</a>
+        </div>
+        <div class="deep-dive">
+          <h3>免费大赛直播的主要来源类型</h3>
+          <p>目前能免费观看大赛的渠道大致分为四类：官方赛事组织的免费场次、持权转播方开放的限免入口、品牌赞助的公益直播，以及聚合型平台整理的可看线路。不同来源的稳定性和画质差异明显，理解这些类型有助于你在“每日大赛免费观赛”时快速判断哪个入口更适合当前场景。</p>
+          <ul>
+            <li><strong>官方限免场次：</strong>部分联赛每轮开放一场免费直播，画质稳定、解说专业，但场次有限。</li>
+            <li><strong>转播方试看入口：</strong>持权平台常提供前 5—10 分钟免费试看，适合短时观看或关键节点。</li>
+            <li><strong>品牌赞助直播：</strong>电商或运动品牌在大型赛事期间开放公益直播间，通常带少量广告。</li>
+            <li><strong>聚合整理线路：</strong>由第三方整理多个可看信号，方便但需要自行验证可用性。</li>
+          </ul>
+
+          <h3>免费观赛平台对比：画质、延迟与广告</h3>
+          <p>选择免费观赛平台时，最直接的比较维度是画质、延迟、广告时长和解说质量。下面的对照表基于近期大赛场景的常见表现整理，供你在几个选项之间做取舍。</p>
+          <table class="compare-table">
+            <thead>
+              <tr><th>平台类型</th><th>典型画质</th><th>延迟表现</th><th>广告情况</th><th>适合场景</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>官方限免入口</td><td>1080P</td><td>较低</td><td>赛前贴片广告</td><td>关键场次、大屏观看</td></tr>
+              <tr><td>转播方试看</td><td>720P—1080P</td><td>中等</td><td>试看结束提示</td><td>短时观看、手机端</td></tr>
+              <tr><td>品牌公益直播</td><td>720P</td><td>中等</td><td>中场插播</td><td>休闲观看、多任务</td></tr>
+              <tr><td>聚合整理线路</td><td>480P—1080P</td><td>波动较大</td><td>较少</td><td>临时补看、备用</td></tr>
+            </tbody>
+          </table>
+          <p>如果你追求稳定，优先选择官方限免入口；如果只是想通勤时看一眼比分和关键回合，转播方试看或品牌直播足够。聚合线路适合作为备用，不建议作为唯一入口。</p>
+
+          <h3>移动端免费观赛的实操要点</h3>
+          <p>手机观看大赛时，免费线路的稳定性受网络和清晰度设置影响较大。建议在开赛前 5 分钟进入直播间，手动将清晰度调至“自动”或 720P，避免因带宽不足反复缓冲。如果使用蜂窝网络，优先选择标有“低延迟”字样的线路。投屏到电视时，确保手机与电视处于同一 Wi-Fi 网络，并提前测试声音同步。</p>
+          <p>另外，部分免费入口会在中场休息时切换广告，可以提前收藏该入口页面，下半场开始后重新进入。对于需要注册的免费平台，建议使用临时信息完成注册，不要在未确认的页面输入敏感资料。</p>
+
+          <h3>如何判断一场大赛是否值得免费观看</h3>
+          <p>每日大赛场次很多，时间有限时可以从三个维度筛选：积分榜或淘汰赛阶段的关键程度、双方核心球员是否出战、以及免费入口的画质是否达到 720P 以上。以足球为例，欧冠淘汰赛和联赛争冠战通常强度更高；篮球方面，季后赛卡位战和传统强队对话更值得投入时间。电竞则优先看榜首对决或生死局。</p>
+          <p>如果你只是想了解赛果，免费的文字直播和集锦也足够；如果想完整感受比赛节奏，再选择视频直播。页面中的热门卡片会标注“强强对话”“关键战”等标签，可以作为快速判断的参考。</p>
+        </div>
+      </section>
+
+      <!-- 6. 体验指南 -->
+      <section id="guide" class="panel section-body anchor-target">
+        <div class="section-head">
+          <h2>免费观赛体验指南</h2>
+          <a class="more-link" href="#faq">更多问题 →</a>
+        </div>
+        <div class="steps">
+          <div class="step-item">
+            <div class="step-num">1</div>
+            <div class="step-body">
+              <h4>先看赛程再选入口</h4>
+              <p>从“最新赛程”了解今天有哪些免费场次，按开赛时间排序，优先选择自己关注的联赛。</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">2</div>
+            <div class="step-body">
+              <h4>用分类或搜索缩小范围</h4>
+              <p>足球、篮球、电竞等分类入口可以直接定位到对应垂类。站内搜索支持球队名、联赛名和平台名。</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">3</div>
+            <div class="step-body">
+              <h4>开赛前测试线路</h4>
+              <p>提前 5 分钟进入免费直播间，确认画质与声音正常。若卡顿，切换到“低延迟”或“标清”线路。</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">4</div>
+            <div class="step-body">
+              <h4>移动端与投屏适配</h4>
+              <p>手机观看建议横屏并锁定亮度；投屏时确保同一 Wi-Fi，部分免费入口支持电视浏览器直接打开。</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">5</div>
+            <div class="step-body">
+              <h4>收藏与追更</h4>
+              <p>将常看的联赛卡片加入浏览器书签，每个比赛日回来查看更新。热门场次会提前一天出现在列表中。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. FAQ -->
+      <section id="faq" class="panel section-body anchor-target">
+        <div class="section-head">
+          <h2>免费观赛常见问题</h2>
+          <a class="more-link" href="#guide">查看指南 →</a>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>每日大赛免费观赛一般覆盖哪些赛事？</summary>
+            <div class="faq-answer">主要覆盖足球五大联赛与欧冠、篮球 NBA 与 CBA、电竞赛事如 LPL 和 KPL，以及网球、F1 等热门大赛。每个比赛日根据实际免费入口情况更新，不是所有场次都有免费信号。</div>
+          </details>
+          <details>
+            <summary>免费观赛的直播入口画质怎么样？</summary>
+            <div class="faq-answer">官方限免入口通常为 1080P，转播方试看和品牌直播多为 720P，聚合线路在 480P 到 1080P 之间波动。页面会在卡片上标注清晰度参考，实际画质受网络和入口状态影响。</div>
+          </details>
+          <details>
+            <summary>在手机上看免费大赛直播需要安装 App 吗？</summary>
+            <div class="faq-answer">多数免费入口支持手机浏览器直接观看，不需要额外安装。部分平台会引导下载 App，但网页端通常也能完成观看。建议优先使用浏览器，减少安装未知应用的风险。</div>
+          </details>
+          <details>
+            <summary>免费观赛平台之间延迟差别大吗？</summary>
+            <div class="faq-answer">有差别。官方限免入口延迟相对较低，聚合线路延迟波动较大。如果看的是需要实时互动的比赛，建议选择标注“低延迟”的线路，并提前测试。</div>
+          </details>
+          <details>
+            <summary>免费观看大赛时如何避免卡顿？</summary>
+            <div class="faq-answer">开赛前 5 分钟进入，手动选择 720P 或自动清晰度；使用 Wi-Fi 优先；关闭后台占用带宽的应用；如果仍卡顿，切换到备用线路。投屏时确保手机和电视在同一网络。</div>
+          </details>
+          <details>
+            <summary>免费观赛和付费会员的主要区别是什么？</summary>
+            <div class="faq-answer">免费观赛通常场次有限、广告更多、画质可选范围较小，且部分入口为试看性质。付费会员的优势在于全部场次、稳定高清和多路解说。如果只是偶尔看关键场次，免费入口足够；高频观赛则付费更省心。</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- 8. 用户评论 -->
+      <section id="comments" class="panel anchor-target">
+        <div class="section-head" style="padding:18px 20px 0;">
+          <h2>观众怎么说</h2>
+          <span class="more-link">共 16 条</span>
+        </div>
+        <div class="comment-grid">
+          <div class="comment-card"><div class="comment-head"><div class="avatar">林</div><span class="comment-name">林间看球</span></div><p class="comment-text">昨晚用这里给的入口看了<span class="highlight">欧冠免费直播</span>，画质比预期好，就是中场广告有点长。</p></div>
+          <div class="comment-card"><div class="comment-head"><div class="avatar">周</div><span class="comment-name">周末投屏党</span></div><p class="comment-text">CBA 那场投屏很顺利，电视端直接打开浏览器就能看，省了装 App。</p></div>
+          <div class="comment-card"><div class="comment-head"><div class="avatar">陈</div><span class="comment-name">陈跑跑</span></div><p class="comment-text">通勤路上用手机看英超，选了低延迟线路，基本能跟上文字比分，满足。</p></div>
+          <div class="comment-card"><div class="comment-head"><div class="avatar">赵</div><span class="comment-name">赵大猫</span></div><p class="comment-text">对比了几个<span class="highlight">免费观赛平台</span>，官方限免确实稳，聚合线路偶尔要刷新。</p></div>
+          <div class="comment-card"><div class="comment-head"><div class="avatar">孙</div><span class="comment-name">孙小胖</span></div><p class="comment-text">NBA 免费入口画质可以，但解说声音偏小，得自己调音量。</p></div>
+          <div class="comment-card"><div class="comment-head"><div class="avatar">吴</div><span class="comment-name">吴同学</span></div><p class="comment-text">LPL 直播间有实时数据面板，对看比赛帮助很大，希望多加点赛后复盘。</p></div>
+          <div class="comment-card"><div class="comment-head"><div class="avatar">郑</div><span class="comment-name">郑好好</span></div><p class="comment-text">德甲国家德比的赛前分析写得不错，免费入口也好找，页面更新及时。</p></div>
+          <div class="comment-card"><div class="comment-head"><div class="avatar">王</div><span class="comment-name">王铁柱</span></div><p class="comment-text">有时候免费线路会失效，建议每个卡片多备一条备用入口。</p></div>
+          <div class="comment-card"><div class="comment-head"><div class="avatar">李</div><span class="comment-name">李慢慢</span></div><p class="comment-text">第一次用，按指南提前五分钟进直播间，确实没卡，体验还行。</p></div>
+          <div class="comment-card"><div class="comment-head"><div class="avatar">黄</div><span class="comment-name">黄小帅</span></div><p class="comment-text">足球免费直播的场次挺全，希望增加更多南美解放者杯的内容。</p></div>
+          <div class="comment-card"><div class="comment-head"><div class="avatar">刘</div><span class="comment-name">刘一腿</span></div><p class="comment-text">电竞赛事那个入口不错，延迟低，弹幕也少，适合专心看比赛。</p></div>
+          <div class="comment-card"><div class="comment-head"><div class="avatar">徐</div><span class="comment-name">徐大半</span></div><p class="comment-text">页面手机打开不卡，分类点进去直接到对应卡片，比之前用的导航站顺手。</p></div>
+          <div class="comment-card"><div class="comment-head"><div class="avatar">马</div><span class="comment-name">马后炮</span></div><p class="comment-text">免费场次大多不是最热门的，但关键战基本都有，够用了。</p></div>
+          <div class="comment-card"><div class="comment-head"><div class="avatar">朱</div><span class="comment-name">朱小跑</span></div><p class="comment-text">希望增加一个“今日免费场次”的汇总时间轴，按开赛时间排更直观。</p></div>
+          <div class="comment-card"><div class="comment-head"><div class="avatar">胡</div><span class="comment-name">胡看海</span></div><p class="comment-text">画质整体满意，就是有些入口需要先看几秒广告，可以接受。</p></div>
+          <div class="comment-card"><div class="comment-head"><div class="avatar">郭</div><span class="comment-name">郭大侠</span></div><p class="comment-text">搜索功能好用，直接搜球队名就能找到对应免费场次。</p></div>
+        </div>
+      </section>
+
+      <!-- 9. 相关资讯 -->
+      <section id="news" class="panel section-body anchor-target">
+        <div class="section-head">
+          <h2>相关赛事资讯</h2>
+          <a class="more-link" href="#latest-updates">更多更新 →</a>
+        </div>
+        <ul class="news-list">
+          <li class="news-item">
+            <div class="news-title"><a href="#hot-picks">欧冠八强对阵出炉，两场免费直播场次确认</a></div>
+            <div class="news-meta">2025-03-12 · 足球</div>
+            <p class="news-summary">本周欧冠淘汰赛进入关键阶段，持权转播方开放两场限免直播，其中一场为传统强队对话。</p>
+          </li>
+          <li class="news-item">
+            <div class="news-title"><a href="#hot-picks">NBA 西部卡位战免费观看入口增加</a></div>
+            <div class="news-meta">2025-03-11 · 篮球</div>
+            <p class="news-summary">随着常规赛接近尾声，多场关键卡位战开放免费试看，移动端线路同步扩容。</p>
+          </li>
+          <li class="news-item">
+            <div class="news-title"><a href="#hot-picks">LPL 春季赛榜首对决免费直播数据面板上线</a></div>
+            <div class="news-meta">2025-03-11 · 电竞</div>
+            <p class="news-summary">免费直播间新增实时经济差与胜率预测，方便观众理解比赛走势。</p>
+          </li>
+          <li class="news-item">
+            <div class="news-title"><a href="#hot-picks">英超争冠关键战免费信号测试稳定</a></div>
+            <div class="news-meta">2025-03-10 · 足球</div>
+            <p class="news-summary">阿森纳与利物浦的直接对话确认提供中文解说免费线路，赛前两小时开放测试。</p>
+          </li>
+          <li class="news-item">
+            <div class="news-title"><a href="#hot-picks">CBA 半决赛免费观赛支持电视端投屏</a></div>
+            <div class="news-meta">2025-03-09 · 篮球</div>
+            <p class="news-summary">辽宁与广东的半决赛系列赛开放免费投屏入口，适合家庭大屏观看。</p>
+          </li>
+          <li class="news-item">
+            <div class="news-title"><a href="#hot-picks">德甲国家德比免费直播多路解说可选</a></div>
+            <div class="news-meta">2025-03-08 · 足球</div>
+            <p class="news-summary">拜仁与多特的比赛提供普通话与地方解说两条免费音轨，观众可按偏好切换。</p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 10. 相关推荐 -->
+      <section id="recommend" class="panel anchor-target">
+        <div class="section-head" style="padding:16px 18px 0;">
+          <h2>相关推荐方向</h2>
+        </div>
+        <div class="rec-tags">
+          <a href="#hot-picks">欧冠免费直播</a>
+          <a href="#hot-picks">NBA 免费观看</a>
+          <a href="#hot-picks">英超在线直播</a>
+          <a href="#hot-picks">LPL 赛事直播</a>
+          <a href="#hot-picks">CBA 免费投屏</a>
+          <a href="#hot-picks">德甲多路解说</a>
+          <a href="#hot-picks">足球免费观看</a>
+          <a href="#hot-picks">篮球在线直播</a>
+          <a href="#hot-picks">电竞赛事免费看</a>
+          <a href="#hot-picks">手机看大赛直播</a>
+        </div>
+      </section>
+
+      <!-- 11. 趋势观察 -->
+      <section id="trend" class="panel section-body anchor-target">
+        <div class="section-head">
+          <h2>近期大赛观赛趋势观察</h2>
+          <a class="more-link" href="#news">更多资讯 →</a>
+        </div>
+        <div class="trend-list">
+          <div class="trend-item">
+            <div class="trend-num">01</div>
+            <div class="trend-content">
+              <h4>免费观赛向移动端集中</h4>
+              <p>近一个月手机端访问占比超过七成，通勤时段和午休时段是观看高峰，用户更关注低延迟与流量消耗。</p>
+            </div>
+          </div>
+          <div class="trend-item">
+            <div class="trend-num">02</div>
+            <div class="trend-content">
+              <h4>官方限免场次关注度最高</h4>
+              <p>在多个免费入口并存时，用户优先选择画质稳定、解说专业的官方限免线路，聚合线路多作为备用。</p>
+            </div>
+          </div>
+          <div class="trend-item">
+            <div class="trend-num">03</div>
+            <div class="trend-content">
+              <h4>电竞赛事免费观看需求增长明显</h4>
+              <p>LPL 与 KPL 的免费直播搜索量环比上升，实时数据面板和赛后复盘成为用户选择直播间的重要参考。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 右栏 -->
+    <aside class="col-right" aria-label="辅助阅读">
+      <div class="panel">
+        <div class="panel-title">页内目录</div>
+        <nav class="toc" aria-label="页内目录">
+          <ul>
+            <li><a href="#intro">平台简介</a></li>
+            <li><a href="#hot-picks">热门赛事推荐</a></li>
+            <li><a href="#latest-updates">最新赛程更新</a></li>
+            <li><a href="#categories">赛事分类</a></li>
+            <li><a href="#deep-dive">深度解析</a></li>
+            <li><a href="#guide">观赛指南</a></li>
+            <li><a href="#faq">常见问题</a></li>
+            <li><a href="#comments">观众评论</a></li>
+            <li><a href="#news">赛事资讯</a></li>
+            <li><a href="#recommend">相关推荐</a></li>
+            <li><a href="#trend">趋势观察</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="panel">
+        <div class="panel-title">热门条目</div>
+        <ul class="hot-list">
+          <li><span class="rank">1</span><a href="#hot-picks">欧冠皇马 vs 曼城免费直播</a><span class="hot-tag">2.8万</span></li>
+          <li><span class="rank">2</span><a href="#hot-picks">NBA 湖人 vs 勇士在线直播</a><span class="hot-tag">3.1万</span></li>
+          <li><span class="rank">3</span><a href="#hot-picks">LPL JDG vs BLG 免费观赛</a><span class="hot-tag">1.9万</span></li>
+          <li><span class="rank">4</span><a href="#hot-picks">英超阿森纳 vs 利物浦</a><span class="hot-tag">2.4万</span></li>
+          <li><span class="rank">5</span><a href="#hot-picks">CBA 辽宁 vs 广东免费投屏</a><span class="hot-tag">1.6万</span></li>
+        </ul>
+      </div>
+      <div class="panel">
+        <div class="panel-title">延伸阅读</div>
+        <ul class="extend-list">
+          <li><a href="#deep-dive">免费观赛平台对比表</a></li>
+          <li><a href="#guide">手机投屏看大赛步骤</a></li>
+          <li><a href="#faq">免费场次画质说明</a></li>
+          <li><a href="#trend">近期免费观赛趋势</a></li>
+        </ul>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- ===== 页尾 ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="f-logo">
+            <svg viewBox="0 0 32 32" aria-hidden="true">
+              <circle cx="16" cy="16" r="15" fill="#1b5a7a"/>
+              <path d="M16 5l2.6 7.8L26 16l-7.4 3.2L16 27l-2.6-7.8L6 16l7.4-3.2z" fill="#f5b342"/>
+            </svg>
+            <span class="f-name">每日大赛免费观赛</span>
+          </div>
+          <p>每天整理足球、篮球、电竞等热门大赛的免费直播入口与观赛时间表，帮你在不付费的情况下找到稳定可看的比赛。</p>
+        </div>
+        <div class="footer-col">
+          <h4>赛事分类</h4>
+          <ul>
+            <li><a href="#categories">足球免费直播</a></li>
+            <li><a href="#categories">篮球免费观看</a></li>
+            <li><a href="#categories">电竞赛事直播</a></li>
+            <li><a href="#categories">网球与 F1</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>观赛帮助</h4>
+          <ul>
+            <li><a href="#guide">体验指南</a></li>
+            <li><a href="#faq">常见问题</a></li>
+            <li><a href="#deep-dive">平台对比</a></li>
+            <li><a href="#news">赛事资讯</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>热门入口</h4>
+          <ul>
+            <li><a href="#hot-picks">欧冠免费直播</a></li>
+            <li><a href="#hot-picks">NBA 免费观看</a></li>
+            <li><a href="#hot-picks">LPL 赛事直播</a></li>
+            <li><a href="#hot-picks">英超在线直播</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 每日大赛免费观赛 · 内容聚合示例</span>
+        <span>部分内容为示例数据，仅用于展示页面结构</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var searchInput = document.getElementById('siteSearch');
+      var searchBtn = document.getElementById('searchBtn');
+      var searchableItems = Array.prototype.slice.call(
+        document.querySelectorAll('.content-card, .update-item, .news-item, .cat-item, .comment-card')
+      );
+
+      // 为搜索结果无结果创建提示元素
+      var emptyTip = document.createElement('div');
+      emptyTip.className = 'search-empty';
+      emptyTip.textContent = '没有找到相关内容，试试搜索“足球”“NBA”“LPL”或具体球队名称。';
+
+      var mainCol = document.querySelector('.col-main');
+      if (mainCol) {
+        mainCol.insertBefore(emptyTip, mainCol.firstChild.nextSibling);
+      }
+
+      function doSearch() {
+        var q = searchInput.value.trim().toLowerCase();
+        if (!q) {
+          searchableItems.forEach(function (el) { el.style.display = ''; });
+          emptyTip.classList.remove('show');
+          return;
+        }
+        var visibleCount = 0;
+        searchableItems.forEach(function (el) {
+          var text = (el.textContent || '').toLowerCase();
+          var dataSearch = (el.getAttribute('data-search') || '').toLowerCase();
+          var match = text.indexOf(q) !== -1 || dataSearch.indexOf(q) !== -1;
+          el.style.display = match ? '' : 'none';
+          if (match) visibleCount++;
+        });
+        if (visibleCount === 0) {
+          emptyTip.classList.add('show');
+        } else {
+          emptyTip.classList.remove('show');
+        }
+      }
+
+      searchBtn.addEventListener('click', doSearch);
+      searchInput.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          doSearch();
+        }
+      });
+      // 输入清空时恢复
+      searchInput.addEventListener('input', function () {
+        if (!searchInput.value.trim()) {
+          searchableItems.forEach(function (el) { el.style.display = ''; });
+          emptyTip.classList.remove('show');
+        }
+      });
+    })();
+  </script>
+
+</body>
+  </html>
